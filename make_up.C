@@ -48,23 +48,13 @@ void make_up(){
   //string in_bits[]={"418","6"}
   //for(int k=0;k<2;k++){
   
-  //Definition for the interesting bits                                                                                                  
-  //0 gen                                                                                                                                
-  //1 acc                                                                                                                                
-  //2 194*acc                                                                                                                                
-  //3 195*acc                                                                                                                                
-  //4 205*acc                                                                                                                                
-  //5 OR*acc                                                                                                                                 
-  //6 OR*acc                                                                                                                                 
-  
-
   TH2F * numerator;
   TH2F * denominator;
   //cout<<"going for 2D"<<endl;
 
   numerator  = (TH2F*) (theFile->Get("wide_pt1pt2_4"));
-  denominator= (TH2F*) (theFile->Get("wide_pt1pt2_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
+  denominator= (TH2F*) (theFile->Get("wide_pt1pt2_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
   binomialEfficiency2D(numerator,denominator,true,true);
   Ca0->SaveAs(("hlt/or_over_acc_efficiency.png"));
   Ca0->Clear();
@@ -72,50 +62,29 @@ void make_up(){
   Ca0->SaveAs(("hlt/eff_wide_pt1pt2.png"));
   Ca0->Clear();
   
-  numerator  = (TH2F*) (theFile->Get("wide_pt1pt2_3"));
-  denominator= (TH2F*) (theFile->Get("wide_pt1pt2_0"));
-  cout<<"calling binomial efficiency 4/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
-  binomialEfficiency2D(numerator,denominator,true,true);
-  Ca0->SaveAs(("hlt/205_over_acc_efficiency.png"));
-  Ca0->Clear();
-  
-  numerator  = (TH2F*) (theFile->Get("wide_pt1pt2_2"));
-  denominator= (TH2F*) (theFile->Get("wide_pt1pt2_0"));
-  cout<<"calling binomial efficiency 3/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
-  binomialEfficiency2D(numerator,denominator,true,true);
-  Ca0->SaveAs(("hlt/195_over_acc_efficiency.png"));
-  Ca0->Clear();
-  
-  numerator  = (TH2F*) (theFile->Get("wide_pt1pt2_1"));
-  denominator= (TH2F*) (theFile->Get("wide_pt1pt2_0"));
-  cout<<"calling binomial efficiency 2/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
-  binomialEfficiency2D(numerator,denominator,true,true);
-  Ca0->SaveAs(("hlt/194_over_acc_efficiency.png"));
-  Ca0->Clear();
-  
   numerator  = (TH2F*) (theFile->Get("pt1pt2_4"));
-  denominator= (TH2F*) (theFile->Get("pt1pt2_0"));
+  denominator= (TH2F*) (theFile->Get("pt1pt2_1"));
   cout<<"calling binomial efficiency 4/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
   binomialEfficiency2D(numerator,denominator,false,true);
   Ca0->SaveAs(("hlt/eff_pt1pt2.png"));
   Ca0->Clear();
 
   numerator  = (TH2F*) (theFile->Get("pt1pt2Norm_4"));
-  denominator= (TH2F*) (theFile->Get("pt1pt2Norm_0"));
+  denominator= (TH2F*) (theFile->Get("pt1pt2Norm_1"));
   cout<<"calling binomial efficiency 4/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
   binomialEfficiency2D(numerator,denominator,false,false);
   Ca0->SaveAs(("hlt/eff_pt1pt2Norm.png"));
   Ca0->Clear();
 
   numerator  = (TH2F*) (theFile->Get("eta1eta2_4"));
-  denominator= (TH2F*) (theFile->Get("eta1eta2_0"));
+  denominator= (TH2F*) (theFile->Get("eta1eta2_1"));
   cout<<"calling binomial efficiency 4/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
   binomialEfficiency2D(numerator,denominator,false,false);
   Ca0->SaveAs(("hlt/eff_eta1eta2.png"));
   Ca0->Clear();
 
   numerator  = (TH2F*) (theFile->Get("phi1phi2_4"));
-  denominator= (TH2F*) (theFile->Get("phi1phi2_0"));
+  denominator= (TH2F*) (theFile->Get("phi1phi2_1"));
   cout<<"calling binomial efficiency 4/1 ="<<numerator->GetEntries()/denominator->GetEntries()<<endl;
   binomialEfficiency2D(numerator,denominator,false,false);
   Ca0->SaveAs(("hlt/eff_phi1phi2.png"));
@@ -133,71 +102,71 @@ void make_up(){
   TH1F * denominator1D; 
 
   numerator1D = (TH1F*) (theFile->Get("higgsEta_4"));
-  denominator1D = (TH1F*) (theFile->Get("higgsEta_0"));
+  denominator1D = (TH1F*) (theFile->Get("higgsEta_1"));
   cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_higgsEta.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("higgsPhi_4"));
-  denominator1D = (TH1F*) (theFile->Get("higgsPhi_0"));
+  denominator1D = (TH1F*) (theFile->Get("higgsPhi_1"));
   cout<<"calling binomial efficiency 5/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_higgsPhi.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("higgsP_4"));
-  denominator1D = (TH1F*) (theFile->Get("higgsP_0"));
+  denominator1D = (TH1F*) (theFile->Get("higgsP_1"));
   cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_higgsP.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("higgsPt_4"));
-  denominator1D = (TH1F*) (theFile->Get("higgsPt_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("higgsPt_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_higgsPt.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("massDiphoton_4"));
-  denominator1D = (TH1F*) (theFile->Get("massDiphoton_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("massDiphoton_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_massDiphoton.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("massHiggs_4"));
-  denominator1D = (TH1F*) (theFile->Get("massHiggs_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("massHiggs_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_massHiggs.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("ptLead_4"));
-  denominator1D = (TH1F*) (theFile->Get("ptLead_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("ptLead_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_ptLead.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("ptTrail_4"));
-  denominator1D = (TH1F*) (theFile->Get("ptTrail_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("ptTrail_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_ptTrail.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("ptLeadNorm_4"));
-  denominator1D = (TH1F*) (theFile->Get("ptLeadNorm_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("ptLeadNorm_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_ptLeadNorm.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("ptTrailNorm_4"));
-  denominator1D = (TH1F*) (theFile->Get("ptTrailNorm_0"));
-  cout<<"calling binomial efficiency 4/0 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
+  denominator1D = (TH1F*) (theFile->Get("ptTrailNorm_1"));
+  cout<<"calling binomial efficiency 4/1 ="<<numerator1D->GetEntries()/denominator1D->GetEntries()<<endl;
   binomialEfficiency1D(numerator1D,denominator1D);
   Ca0->SaveAs(("gen/eff_ptTrailNorm.png"));
   Ca0->Clear();
@@ -240,14 +209,14 @@ void Draw1D(string savedname,string theXtitle,string folder,TFile * theFile){
       histoArray[selection]->Draw();
       histoArray[selection]->SetFillColor(kBlue);
       leg->AddEntry(histoArray[selection],"MiniTree","f");
-    }else if(selection==4){
-      histoArray[selection]->Draw("same");
-      histoArray[selection]->SetFillColor(kYellow);
-      leg->AddEntry(histoArray[selection],"194||195||205","f");
     }else if(selection==1){
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kRed);
-      //leg->AddEntry(histoArray[selection],"bit 194","f");
+      leg->AddEntry(histoArray[selection],"selection","f");
+    }else if(selection==4){
+      histoArray[selection]->Draw("same");
+      histoArray[selection]->SetFillColor(kYellow);
+      leg->AddEntry(histoArray[selection],"selection &&(194||195||205)","f");
     }
     histoArray[selection]->SetXTitle(theXtitle.c_str());
     histoArray[selection]->SetMinimum(0);
