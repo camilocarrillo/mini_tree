@@ -1,8 +1,8 @@
 //////////////////////////////////////////////////////////
 // This class has been automatically generated on
-// Tue Jan 21 10:45:29 2014 by ROOT version 5.34/09
+// Fri Mar  7 12:17:42 2014 by ROOT version 5.34/09
 // from TTree DiPhotonTree/Tree
-// found on file: /sps/cms/jfan/ForHLT/Diphoton8TeVForHLT/ggh_m123_8TeV/MiniTreeOutput_0.root
+// found on file: MiniTreeOutput_0.root
 //////////////////////////////////////////////////////////
 
 #ifndef READING_DIPHOTON_TREE_h
@@ -22,6 +22,7 @@ class READING_DIPHOTON_TREE {
 public :
    TTree          *fChain;   //!pointer to the analyzed TTree or TChain
    Int_t           fCurrent; //!current Tree number in a TChain
+
    // Declaration of leaf types
    Int_t           event_hlt_n;
    vector<unsigned short> *event_hlt_bit;
@@ -82,6 +83,8 @@ public :
    Float_t         Diphoton_SubLeadEta;
    Float_t         Diphoton_LeadPhi;
    Float_t         Diphoton_SubLeadPhi;
+   Float_t         Diphoton_LeadE;
+   Float_t         Diphoton_SubLeadE;
    Float_t         Diphoton_LeadSigIeIe;
    Float_t         Diphoton_SubLeadSigIeIe;
    Float_t         Diphoton_LeadR9;
@@ -90,6 +93,8 @@ public :
    Int_t           Diphoton_SubLeadCiCLevel;
    Int_t           Diphoton_LeadPFCiCLevel;
    Int_t           Diphoton_SubLeadPFCiCLevel;
+   Int_t           Diphoton_LeadPFCiCLevelPSV;
+   Int_t           Diphoton_SubLeadPFCiCLevelPSV;
    Float_t         Diphoton_LeadMVAOutput;
    Float_t         Diphoton_SubLeadMVAOutput;
    Float_t         Diphoton_LeadCorrMVAOutput;
@@ -98,6 +103,8 @@ public :
    Float_t         Diphoton_SubLeadTaoMVAOutput;
    Int_t           Diphoton_LeadMITPre;
    Int_t           Diphoton_SubLeadMITPre;
+   Int_t           Diphoton_LeadMITPrePSV;
+   Int_t           Diphoton_SubLeadMITPrePSV;
    Int_t           Diphoton_LeadElectronPre;
    Int_t           Diphoton_SubLeadElectronPre;
    Int_t           Diphoton_LeadisPFElectron;
@@ -122,112 +129,128 @@ public :
    Int_t           Diphoton_SubLeadHasPixSeed;
    Float_t         Diphoton_Leadpfiso02;
    Float_t         Diphoton_SubLeadpfiso02;
+   Float_t         Diphoton_LeadSigmaEOverE;
+   Float_t         Diphoton_SubLeadSigmaEOverE;
+   Float_t         Diphoton_LeadR9_CiC;
+   Float_t         Diphoton_SubLeadR9_CiC;
+   Float_t         Diphoton_Leadpfphotoniso03;
+   Float_t         Diphoton_Leadpfphotoniso04;
+   Float_t         Diphoton_SubLeadpfphotoniso03;
+   Float_t         Diphoton_SubLeadpfphotoniso04;
+   Float_t         Diphoton_Leadpfchargediso03;
+   Float_t         Diphoton_Leadpfchargediso03Bad;
+   Float_t         Diphoton_SubLeadpfchargediso03;
+   Float_t         Diphoton_SubLeadpfchargediso03Bad;
+   Float_t         Diphoton_Leadpfchargediso04;
+   Float_t         Diphoton_Leadpfchargediso04Bad;
+   Float_t         Diphoton_SubLeadpfchargediso04;
+   Float_t         Diphoton_SubLeadpfchargediso04Bad;
    Int_t           Diphoton_Add_NPhotons;
-   Float_t         Diphoton_Add_PT[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_Eta[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_Phi[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_SCEta[8];   //[Diphoton_Add_NPhotons]
-   Int_t           Diphoton_Add_IsConv[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_MVAOutput[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_CorrMVAOutput[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_SumPFISO03[8];   //[Diphoton_Add_NPhotons]
-   Int_t           Diphoton_Add_MITPre[8];   //[Diphoton_Add_NPhotons]
-   Int_t           Diphoton_Add_CiCLevel[8];   //[Diphoton_Add_NPhotons]
-   Int_t           Diphoton_Add_PFCiCLevel[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_Mass[8];   //[Diphoton_Add_NPhotons]
-   Float_t         Diphoton_Add_TaoMVAOutput[8];   //[Diphoton_Add_NPhotons]
-   Int_t           Diphoton_Add_XSSinglePre[8];   //[Diphoton_Add_NPhotons]
-   Int_t           Diphoton_Add_IsAlsoJet[8];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_PT[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_Eta[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_Phi[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_SCEta[4];   //[Diphoton_Add_NPhotons]
+   Int_t           Diphoton_Add_IsConv[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_MVAOutput[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_CorrMVAOutput[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_SumPFISO03[4];   //[Diphoton_Add_NPhotons]
+   Int_t           Diphoton_Add_MITPre[4];   //[Diphoton_Add_NPhotons]
+   Int_t           Diphoton_Add_CiCLevel[4];   //[Diphoton_Add_NPhotons]
+   Int_t           Diphoton_Add_PFCiCLevel[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_Mass[4];   //[Diphoton_Add_NPhotons]
+   Float_t         Diphoton_Add_TaoMVAOutput[4];   //[Diphoton_Add_NPhotons]
+   Int_t           Diphoton_Add_XSSinglePre[4];   //[Diphoton_Add_NPhotons]
+   Int_t           Diphoton_Add_IsAlsoJet[4];   //[Diphoton_Add_NPhotons]
    Int_t           Diphoton_NMuons;
-   Int_t           Diphoton_Muon_MuType[8];   //[Diphoton_NMuons]
-   Int_t           Diphoton_Muon_Charge[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_PT[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_Eta[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_Phi[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_Ch2OverNdof[8];   //[Diphoton_NMuons]
-   Int_t           Diphoton_Muon_NPixelHits[8];   //[Diphoton_NMuons]
-   Int_t           Diphoton_Muon_NValidHits[8];   //[Diphoton_NMuons]
-   Int_t           Diphoton_Muon_NMatchedChambers[8];   //[Diphoton_NMuons]
-   Int_t           Diphoton_Muon_NValidChamberHits[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_trkiso03[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_ecaliso03[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_hcaliso03[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_pfchhadiso04[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_pfnehadiso04[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_pfphotiso04[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_dbCorr[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_TrackPTErr[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_dz[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_D0Vtx[8];   //[Diphoton_NMuons]
-   Float_t         Diphoton_Muon_DZVtx[8];   //[Diphoton_NMuons]
+   Int_t           Diphoton_Muon_MuType[4];   //[Diphoton_NMuons]
+   Int_t           Diphoton_Muon_Charge[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_PT[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_Eta[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_Phi[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_Ch2OverNdof[4];   //[Diphoton_NMuons]
+   Int_t           Diphoton_Muon_NPixelHits[4];   //[Diphoton_NMuons]
+   Int_t           Diphoton_Muon_NValidHits[4];   //[Diphoton_NMuons]
+   Int_t           Diphoton_Muon_NMatchedChambers[4];   //[Diphoton_NMuons]
+   Int_t           Diphoton_Muon_NValidChamberHits[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_trkiso03[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_ecaliso03[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_hcaliso03[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_pfchhadiso04[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_pfnehadiso04[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_pfphotiso04[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_dbCorr[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_TrackPTErr[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_dz[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_D0Vtx[4];   //[Diphoton_NMuons]
+   Float_t         Diphoton_Muon_DZVtx[4];   //[Diphoton_NMuons]
    Int_t           Diphoton_NElectrons;
-   Int_t           Diphoton_Electron_Charge[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_PT[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_Eta[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_Phi[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_SCPT[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_SCEta[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_SCPhi[4];   //[Diphoton_NElectrons]
-   Int_t           Diphoton_Electron_SCInd[4];   //[Diphoton_NElectrons]
-   Int_t           Diphoton_Electron_TrackInd[4];   //[Diphoton_NElectrons]
-   Int_t           Diphoton_Electron_NHitsInner[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_Sieie[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_SCSieie[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_hoe[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_detaVtx[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_dphiVtx[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_eopin[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_fbrem[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_dcot[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_dist[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_d0[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_dz[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_d0Vtx[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_dzVtx[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_ipdxy_ctf[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_ipdxy_gsf[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_tkiso03[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_ecaliso03[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_hcaliso03[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_ecaliso04[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_hcaliso04[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_pfisocharged[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_pfisophoton[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_pfisoneutral[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_MVAnontrig[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_MVAtrig[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_RegrEnergy[4];   //[Diphoton_NElectrons]
-   Float_t         Diphoton_Electron_ConvVtxProb[4];   //[Diphoton_NElectrons]
-   Int_t           Diphoton_Electron_PassConv[4];   //[Diphoton_NElectrons]
+   Int_t           Diphoton_Electron_Charge[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_PT[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_Eta[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_Phi[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_SCPT[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_SCEta[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_SCPhi[3];   //[Diphoton_NElectrons]
+   Int_t           Diphoton_Electron_SCInd[3];   //[Diphoton_NElectrons]
+   Int_t           Diphoton_Electron_TrackInd[3];   //[Diphoton_NElectrons]
+   Int_t           Diphoton_Electron_NHitsInner[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_Sieie[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_SCSieie[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_hoe[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_detaVtx[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_dphiVtx[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_eopin[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_fbrem[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_dcot[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_dist[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_d0[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_dz[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_d0Vtx[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_dzVtx[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_ipdxy_ctf[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_ipdxy_gsf[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_tkiso03[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_ecaliso03[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_hcaliso03[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_ecaliso04[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_hcaliso04[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_pfisocharged[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_pfisophoton[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_pfisoneutral[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_MVAnontrig[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_MVAtrig[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_RegrEnergy[3];   //[Diphoton_NElectrons]
+   Float_t         Diphoton_Electron_ConvVtxProb[3];   //[Diphoton_NElectrons]
+   Int_t           Diphoton_Electron_PassConv[3];   //[Diphoton_NElectrons]
    Int_t           Diphoton_NJets;
-   Float_t         Diphoton_Jet_PT[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_Eta[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_Phi[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_pfloose[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_sloose[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_floose[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_cmedium[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_smedium[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_fmedium[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_isGenMatched[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_genPt[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_genDr[25];   //[Diphoton_NJets]
-   Bool_t          Diphoton_Jet_IfvbfMatched[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_FullMVA[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_SimpleMVA[25];   //[Diphoton_NJets]
-   Int_t           Diphoton_Jet_FullWPLevel[25];   //[Diphoton_NJets]
-   Int_t           Diphoton_Jet_SimpleWPLevel[25];   //[Diphoton_NJets]
-   Int_t           Diphoton_Jet_CutbasedWPLevel[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_area[25];   //[Diphoton_NJets]
-   Int_t           Diphoton_Jet_nCharged[25];   //[Diphoton_NJets]
-   Int_t           Diphoton_Jet_nNeutrals[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_dZ[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_dRMean[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_dR2Mean[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_csvBtag[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_csvMvaBtag[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_jetProbBtag[25];   //[Diphoton_NJets]
-   Float_t         Diphoton_Jet_tcheBtag[25];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_PT[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_Eta[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_Phi[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_pfloose[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_sloose[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_floose[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_cmedium[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_smedium[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_fmedium[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_isGenMatched[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_genPt[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_genDr[21];   //[Diphoton_NJets]
+   Bool_t          Diphoton_Jet_IfvbfMatched[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_FullMVA[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_SimpleMVA[21];   //[Diphoton_NJets]
+   Int_t           Diphoton_Jet_FullWPLevel[21];   //[Diphoton_NJets]
+   Int_t           Diphoton_Jet_SimpleWPLevel[21];   //[Diphoton_NJets]
+   Int_t           Diphoton_Jet_CutbasedWPLevel[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_area[21];   //[Diphoton_NJets]
+   Int_t           Diphoton_Jet_nCharged[21];   //[Diphoton_NJets]
+   Int_t           Diphoton_Jet_nNeutrals[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_dZ[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_dRMean[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_dR2Mean[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_csvBtag[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_csvMvaBtag[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_jetProbBtag[21];   //[Diphoton_NJets]
+   Float_t         Diphoton_Jet_tcheBtag[21];   //[Diphoton_NJets]
    Float_t         Diphoton_pfmet;
    Float_t         Diphoton_pfmet_phi;
    Float_t         Diphoton_pfmet_sumet;
@@ -296,6 +319,8 @@ public :
    TBranch        *b_Diphoton_SubLeadEta;   //!
    TBranch        *b_Diphoton_LeadPhi;   //!
    TBranch        *b_Diphoton_SubLeadPhi;   //!
+   TBranch        *b_Diphoton_LeadE;   //!
+   TBranch        *b_Diphoton_SubLeadE;   //!
    TBranch        *b_Diphoton_LeadSigIeIe;   //!
    TBranch        *b_Diphoton_SubLeadSigIeIe;   //!
    TBranch        *b_Diphoton_LeadR9;   //!
@@ -304,6 +329,8 @@ public :
    TBranch        *b_Diphoton_SubLeadCiCLevel;   //!
    TBranch        *b_Diphoton_LeadPFCiCLevel;   //!
    TBranch        *b_Diphoton_SubLeadPFCiCLevel;   //!
+   TBranch        *b_Diphoton_LeadPFCiCLevelPSV;   //!
+   TBranch        *b_Diphoton_SubLeadPFCiCLevelPSV;   //!
    TBranch        *b_Diphoton_LeadMVAOutput;   //!
    TBranch        *b_Diphoton_SubLeadMVAOutput;   //!
    TBranch        *b_Diphoton_LeadCorrMVAOutput;   //!
@@ -312,6 +339,8 @@ public :
    TBranch        *b_Diphoton_SubLeadTaoMVAOutput;   //!
    TBranch        *b_Diphoton_LeadMITPre;   //!
    TBranch        *b_Diphoton_SubLeadMITPre;   //!
+   TBranch        *b_Diphoton_LeadMITPrePSV;   //!
+   TBranch        *b_Diphoton_SubLeadMITPrePSV;   //!
    TBranch        *b_Diphoton_LeadElectronPre;   //!
    TBranch        *b_Diphoton_SubLeadElectronPre;   //!
    TBranch        *b_Diphoton_LeadisPFElectron;   //!
@@ -336,6 +365,22 @@ public :
    TBranch        *b_Diphoton_SubLeadHasPixSeed;   //!
    TBranch        *b_Diphoton_Leadpfiso02;   //!
    TBranch        *b_Diphoton_SubLeadpfiso02;   //!
+   TBranch        *b_Diphoton_LeadSigmaEOverE;   //!
+   TBranch        *b_Diphoton_SubLeadSigmaEOverE;   //!
+   TBranch        *b_Diphoton_LeadR9_CiC;   //!
+   TBranch        *b_Diphoton_SubLeadR9_CiC;   //!
+   TBranch        *b_Diphoton_Leadpfphotoniso03;   //!
+   TBranch        *b_Diphoton_Leadpfphotoniso04;   //!
+   TBranch        *b_Diphoton_SubLeadpfphotoniso03;   //!
+   TBranch        *b_Diphoton_SubLeadpfphotoniso04;   //!
+   TBranch        *b_Diphoton_Leadpfchargediso03;   //!
+   TBranch        *b_Diphoton_Leadpfchargediso03Bad;   //!
+   TBranch        *b_Diphoton_SubLeadpfchargediso03;   //!
+   TBranch        *b_Diphoton_SubLeadpfchargediso03Bad;   //!
+   TBranch        *b_Diphoton_Leadpfchargediso04;   //!
+   TBranch        *b_Diphoton_Leadpfchargediso04Bad;   //!
+   TBranch        *b_Diphoton_SubLeadpfchargediso04;   //!
+   TBranch        *b_Diphoton_SubLeadpfchargediso04Bad;   //!
    TBranch        *b_Diphoton_Add_NPhotons;   //!
    TBranch        *b_Diphoton_Add_PT;   //!
    TBranch        *b_Diphoton_Add_Eta;   //!
@@ -459,7 +504,6 @@ public :
    virtual void     Loop();
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
-
 };
 
 #endif
@@ -469,15 +513,15 @@ READING_DIPHOTON_TREE::READING_DIPHOTON_TREE(TTree *tree) : fChain(0)
 {
 // if parameter tree is not specified (or zero), connect the file
 // used to generate this class and read the Tree.
-  if (tree == 0) {
-    TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/sps/cms/jfan/ForHLT/Diphoton8TeVForHLT/-folder-/-file-");
-    if (!f || !f->IsOpen()) {
-      f = new TFile("/sps/cms/jfan/ForHLT/Diphoton8TeVForHLT/-folder-/-file-");
-    }
-    f->GetObject("DiPhotonTree",tree);
-    
-  }
-  Init(tree);
+
+   if (tree == 0) {
+     TFile *f = (TFile*)gROOT->GetListOfFiles()->FindObject("/home/miloc/mini_trees_2/-folder-/-file-");
+     if (!f || !f->IsOpen()) {
+       f = new TFile("/home/miloc/mini_trees_2/-folder-/-file-");
+     }
+     f->GetObject("DiPhotonTree",tree);
+   }
+   Init(tree);
 }
 
 READING_DIPHOTON_TREE::~READING_DIPHOTON_TREE()
@@ -583,6 +627,8 @@ void READING_DIPHOTON_TREE::Init(TTree *tree)
    fChain->SetBranchAddress("Diphoton_SubLeadEta", &Diphoton_SubLeadEta, &b_Diphoton_SubLeadEta);
    fChain->SetBranchAddress("Diphoton_LeadPhi", &Diphoton_LeadPhi, &b_Diphoton_LeadPhi);
    fChain->SetBranchAddress("Diphoton_SubLeadPhi", &Diphoton_SubLeadPhi, &b_Diphoton_SubLeadPhi);
+   fChain->SetBranchAddress("Diphoton_LeadE", &Diphoton_LeadE, &b_Diphoton_LeadE);
+   fChain->SetBranchAddress("Diphoton_SubLeadE", &Diphoton_SubLeadE, &b_Diphoton_SubLeadE);
    fChain->SetBranchAddress("Diphoton_LeadSigIeIe", &Diphoton_LeadSigIeIe, &b_Diphoton_LeadSigIeIe);
    fChain->SetBranchAddress("Diphoton_SubLeadSigIeIe", &Diphoton_SubLeadSigIeIe, &b_Diphoton_SubLeadSigIeIe);
    fChain->SetBranchAddress("Diphoton_LeadR9", &Diphoton_LeadR9, &b_Diphoton_LeadR9);
@@ -591,6 +637,8 @@ void READING_DIPHOTON_TREE::Init(TTree *tree)
    fChain->SetBranchAddress("Diphoton_SubLeadCiCLevel", &Diphoton_SubLeadCiCLevel, &b_Diphoton_SubLeadCiCLevel);
    fChain->SetBranchAddress("Diphoton_LeadPFCiCLevel", &Diphoton_LeadPFCiCLevel, &b_Diphoton_LeadPFCiCLevel);
    fChain->SetBranchAddress("Diphoton_SubLeadPFCiCLevel", &Diphoton_SubLeadPFCiCLevel, &b_Diphoton_SubLeadPFCiCLevel);
+   fChain->SetBranchAddress("Diphoton_LeadPFCiCLevelPSV", &Diphoton_LeadPFCiCLevelPSV, &b_Diphoton_LeadPFCiCLevelPSV);
+   fChain->SetBranchAddress("Diphoton_SubLeadPFCiCLevelPSV", &Diphoton_SubLeadPFCiCLevelPSV, &b_Diphoton_SubLeadPFCiCLevelPSV);
    fChain->SetBranchAddress("Diphoton_LeadMVAOutput", &Diphoton_LeadMVAOutput, &b_Diphoton_LeadMVAOutput);
    fChain->SetBranchAddress("Diphoton_SubLeadMVAOutput", &Diphoton_SubLeadMVAOutput, &b_Diphoton_SubLeadMVAOutput);
    fChain->SetBranchAddress("Diphoton_LeadCorrMVAOutput", &Diphoton_LeadCorrMVAOutput, &b_Diphoton_LeadCorrMVAOutput);
@@ -599,6 +647,8 @@ void READING_DIPHOTON_TREE::Init(TTree *tree)
    fChain->SetBranchAddress("Diphoton_SubLeadTaoMVAOutput", &Diphoton_SubLeadTaoMVAOutput, &b_Diphoton_SubLeadTaoMVAOutput);
    fChain->SetBranchAddress("Diphoton_LeadMITPre", &Diphoton_LeadMITPre, &b_Diphoton_LeadMITPre);
    fChain->SetBranchAddress("Diphoton_SubLeadMITPre", &Diphoton_SubLeadMITPre, &b_Diphoton_SubLeadMITPre);
+   fChain->SetBranchAddress("Diphoton_LeadMITPrePSV", &Diphoton_LeadMITPrePSV, &b_Diphoton_LeadMITPrePSV);
+   fChain->SetBranchAddress("Diphoton_SubLeadMITPrePSV", &Diphoton_SubLeadMITPrePSV, &b_Diphoton_SubLeadMITPrePSV);
    fChain->SetBranchAddress("Diphoton_LeadElectronPre", &Diphoton_LeadElectronPre, &b_Diphoton_LeadElectronPre);
    fChain->SetBranchAddress("Diphoton_SubLeadElectronPre", &Diphoton_SubLeadElectronPre, &b_Diphoton_SubLeadElectronPre);
    fChain->SetBranchAddress("Diphoton_LeadisPFElectron", &Diphoton_LeadisPFElectron, &b_Diphoton_LeadisPFElectron);
@@ -623,6 +673,22 @@ void READING_DIPHOTON_TREE::Init(TTree *tree)
    fChain->SetBranchAddress("Diphoton_SubLeadHasPixSeed", &Diphoton_SubLeadHasPixSeed, &b_Diphoton_SubLeadHasPixSeed);
    fChain->SetBranchAddress("Diphoton_Leadpfiso02", &Diphoton_Leadpfiso02, &b_Diphoton_Leadpfiso02);
    fChain->SetBranchAddress("Diphoton_SubLeadpfiso02", &Diphoton_SubLeadpfiso02, &b_Diphoton_SubLeadpfiso02);
+   fChain->SetBranchAddress("Diphoton_LeadSigmaEOverE", &Diphoton_LeadSigmaEOverE, &b_Diphoton_LeadSigmaEOverE);
+   fChain->SetBranchAddress("Diphoton_SubLeadSigmaEOverE", &Diphoton_SubLeadSigmaEOverE, &b_Diphoton_SubLeadSigmaEOverE);
+   fChain->SetBranchAddress("Diphoton_LeadR9_CiC", &Diphoton_LeadR9_CiC, &b_Diphoton_LeadR9_CiC);
+   fChain->SetBranchAddress("Diphoton_SubLeadR9_CiC", &Diphoton_SubLeadR9_CiC, &b_Diphoton_SubLeadR9_CiC);
+   fChain->SetBranchAddress("Diphoton_Leadpfphotoniso03", &Diphoton_Leadpfphotoniso03, &b_Diphoton_Leadpfphotoniso03);
+   fChain->SetBranchAddress("Diphoton_Leadpfphotoniso04", &Diphoton_Leadpfphotoniso04, &b_Diphoton_Leadpfphotoniso04);
+   fChain->SetBranchAddress("Diphoton_SubLeadpfphotoniso03", &Diphoton_SubLeadpfphotoniso03, &b_Diphoton_SubLeadpfphotoniso03);
+   fChain->SetBranchAddress("Diphoton_SubLeadpfphotoniso04", &Diphoton_SubLeadpfphotoniso04, &b_Diphoton_SubLeadpfphotoniso04);
+   fChain->SetBranchAddress("Diphoton_Leadpfchargediso03", &Diphoton_Leadpfchargediso03, &b_Diphoton_Leadpfchargediso03);
+   fChain->SetBranchAddress("Diphoton_Leadpfchargediso03Bad", &Diphoton_Leadpfchargediso03Bad, &b_Diphoton_Leadpfchargediso03Bad);
+   fChain->SetBranchAddress("Diphoton_SubLeadpfchargediso03", &Diphoton_SubLeadpfchargediso03, &b_Diphoton_SubLeadpfchargediso03);
+   fChain->SetBranchAddress("Diphoton_SubLeadpfchargediso03Bad", &Diphoton_SubLeadpfchargediso03Bad, &b_Diphoton_SubLeadpfchargediso03Bad);
+   fChain->SetBranchAddress("Diphoton_Leadpfchargediso04", &Diphoton_Leadpfchargediso04, &b_Diphoton_Leadpfchargediso04);
+   fChain->SetBranchAddress("Diphoton_Leadpfchargediso04Bad", &Diphoton_Leadpfchargediso04Bad, &b_Diphoton_Leadpfchargediso04Bad);
+   fChain->SetBranchAddress("Diphoton_SubLeadpfchargediso04", &Diphoton_SubLeadpfchargediso04, &b_Diphoton_SubLeadpfchargediso04);
+   fChain->SetBranchAddress("Diphoton_SubLeadpfchargediso04Bad", &Diphoton_SubLeadpfchargediso04Bad, &b_Diphoton_SubLeadpfchargediso04Bad);
    fChain->SetBranchAddress("Diphoton_Add_NPhotons", &Diphoton_Add_NPhotons, &b_Diphoton_Add_NPhotons);
    fChain->SetBranchAddress("Diphoton_Add_PT", Diphoton_Add_PT, &b_Diphoton_Add_PT);
    fChain->SetBranchAddress("Diphoton_Add_Eta", Diphoton_Add_Eta, &b_Diphoton_Add_Eta);

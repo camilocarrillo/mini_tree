@@ -67,6 +67,7 @@ void READING_DIPHOTON_TREE::Loop()
 
 
    TFile * theFileOut;
+   TH1F * cutflow;
    TH1F * ptLead[7  ];
    TH1F * ptTrail[7  ];
    TH1F * ptLeadNorm[7  ];
@@ -81,36 +82,41 @@ void READING_DIPHOTON_TREE::Loop()
    TH2F * eta1eta2[7  ];
    TH2F * pt1pt2[7  ];
    TH2F * pt1pt2Norm[7  ];
+   TH2F * pt1pt2Zoom[7  ];
    TH2F * wide_pt1pt2[7  ];
    const Double_t bins[19]={5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,90,100,110};
-   bool fillhisto[7  ];
+   bool cut[7  ];
    //string arrayHLTpathsNames[442  ];
    bool filled_hlt_names;
-   int selection;
+   int cut_index;
    //beginJobs
    filled_hlt_names=false;
    theFileOut = new TFile("-fileout-", "RECREATE");
    TString name;
-   for(selection=0;selection<7  ;selection++){ //Loop over the different histograms   
-     name = Form("ptLead_%d",selection);      ptLead[selection]       = new TH1F (name,name,100,0.,120.);
-     name = Form("ptTrail_%d",selection);     ptTrail[selection]      = new TH1F (name,name,100,0.,120.);
-     name = Form("ptLeadNorm_%d",selection);  ptLeadNorm[selection]        = new TH1F (name,name,100,0.,1.);
-     name = Form("ptTrailNorm_%d",selection); ptTrailNorm[selection]       = new TH1F (name,name,100,0.,1.);
-     name = Form("massDiphoton_%d",selection);massDiphotonhisto[selection] = new TH1F (name,name,100,80.,180.);
-     name = Form("massHiggs_%d",selection);   massHiggshisto[selection]    = new TH1F (name,name,100,80.,180.);
-     name = Form("higgsEta_%d",selection);    higgsEta[selection]          = new TH1F (name,name,100,-5,5);
-     name = Form("higgsPhi_%d",selection);    higgsPhi[selection]          = new TH1F (name,name,180,-3.15,3.15);
-     name = Form("higgsP_%d",selection);      higgsP[selection]            = new TH1F (name,name,500,0,1200);
-     name = Form("higgsPt_%d",selection);     higgsPt[selection]           = new TH1F (name,name,500,0,1200);
-     name = Form("phi1phi2_%d",selection);    phi1phi2[selection]          = new TH2F (name,name,180,-3.15,3.15,180,-3.15,3.15);
-     name = Form("eta1eta2_%d",selection);    eta1eta2[selection]          = new TH2F (name,name,100,-5,5,100,-5,5);
-     name = Form("pt1pt2_%d",selection);      pt1pt2[selection]            = new TH2F (name,name,100,0.,110.,100,0.,110.);
-     name = Form("pt1pt2Norm_%d",selection);  pt1pt2Norm[selection]        = new TH2F (name,name,100,0.,1.,100,0.,1.);
-     name = Form("wide_pt1pt2_%d",selection); wide_pt1pt2[selection]       = new TH2F (name,name,19-1,bins,19-1,bins);
+
+   cutflow = new TH1F ("cutflow","cutflow",7  ,-0.5.,6.5.);
+
+   for(cut_index=0;cut_index<7  ;cut_index++){//Loop over the different histograms
+     name = Form("ptLead_%d",cut_index);      ptLead[cut_index]            = new TH1F (name,name,100,0.,120.);
+     name = Form("ptTrail_%d",cut_index);     ptTrail[cut_index]           = new TH1F (name,name,100,0.,120.);
+     name = Form("ptLeadNorm_%d",cut_index);  ptLeadNorm[cut_index]        = new TH1F (name,name,100,0.,1.);
+     name = Form("ptTrailNorm_%d",cut_index); ptTrailNorm[cut_index]       = new TH1F (name,name,100,0.,1.);
+     name = Form("massDiphoton_%d",cut_index);massDiphotonhisto[cut_index] = new TH1F (name,name,100,60.,180.);
+     name = Form("massHiggs_%d",cut_index);   massHiggshisto[cut_index]    = new TH1F (name,name,100,60.,180.);
+     name = Form("higgsEta_%d",cut_index);    higgsEta[cut_index]          = new TH1F (name,name,100,-5,5);
+     name = Form("higgsPhi_%d",cut_index);    higgsPhi[cut_index]          = new TH1F (name,name,180,-3.15,3.15);
+     name = Form("higgsP_%d",cut_index);      higgsP[cut_index]            = new TH1F (name,name,500,0,1200);
+     name = Form("higgsPt_%d",cut_index);     higgsPt[cut_index]           = new TH1F (name,name,500,0,1200);
+     name = Form("phi1phi2_%d",cut_index);    phi1phi2[cut_index]          = new TH2F (name,name,180,-3.15,3.15,180,-3.15,3.15);
+     name = Form("eta1eta2_%d",cut_index);    eta1eta2[cut_index]          = new TH2F (name,name,100,-5,5,100,-5,5);
+     name = Form("pt1pt2_%d",cut_index);      pt1pt2[cut_index]            = new TH2F (name,name,100,0.,110.,100,0.,110.);
+     name = Form("pt1pt2Norm_%d",cut_index);  pt1pt2Norm[cut_index]        = new TH2F (name,name,100,0.,1.,100,0.,1.);
+     name = Form("pt1pt2Zoom_%d",cut_index);  pt1pt2Zoom[cut_index]        = new TH2F (name,name,20,0.3,0.5,20,0.2,0.4);
+     name = Form("wide_pt1pt2_%d",cut_index); wide_pt1pt2[cut_index]       = new TH2F (name,name,19-1,bins,19-1,bins);
    }
    
    //loop
-
+   
    for (Long64_t jentry=0; jentry<nentries;jentry++) {
      Long64_t ientry = LoadTree(jentry);
      if (ientry < 0) break;
@@ -133,10 +139,11 @@ void READING_DIPHOTON_TREE::Loop()
      if(std::find(event_hlt_bit->begin(), event_hlt_bit->end(), 194)!=event_hlt_bit->end()) std::cout<<"bit 194 was fired"<<std::endl;
      if(std::find(event_hlt_bit->begin(), event_hlt_bit->end(), 1)!=event_hlt_bit->end()) std::cout<<"bit 1 was fired"<<std::endl;
      */
-     //std::cout<<"fillhisto1 ";
-     for(selection=0;selection<7  ;selection++){
-       fillhisto[selection]=false;
-       //std::cout<<fillhisto[selection]<<" ";
+     //std::cout<<"cut1 ";
+     
+     for(cut_index=0;cut_index<7  ;cut_index++){
+       cut[cut_index]=false;
+       //std::cout<<cut[cut_index]<<" ";
      }
      //std::cout<<std::endl;
 
@@ -144,53 +151,80 @@ void READING_DIPHOTON_TREE::Loop()
      bool bit195=(std::find(event_hlt_bit->begin(), event_hlt_bit->end(), 195)!=event_hlt_bit->end());
      bool bit205=(std::find(event_hlt_bit->begin(), event_hlt_bit->end(), 205)!=event_hlt_bit->end());
      
-     fillhisto[0]=true; //all minitree level just for reference.                                                                
-     fillhisto[1]=//bool for Numerator
-       //Transition Barrel Endcap Zone Excluded
-       !((fabs(Diphoton_LeadEta)>1.4442&&fabs(Diphoton_LeadEta)<1.5660)||(fabs(Diphoton_SubLeadEta)>1.4442&&fabs(Diphoton_SubLeadEta)<1.566)) 
-       &&//Demand that both photons are gen-matched with real ones by asking GenGaGaFlag>=2`
-       (Diphoton_LeadIsGenMatched>0 && Diphoton_SubLeadIsGenMatched>0) 
-       &&//Demand that both photons pass the MIT Preselection
-       (Diphoton_LeadMITPre>0&&Diphoton_SubLeadMITPre>0)
-       &&//both photonIDMVA outputs are above the loose cut
-       (Diphoton_LeadMVAOutput>-0.2&&Diphoton_SubLeadMVAOutput>-0.2)
-       &&//diphotonMVA output is also above the minimum cut
-       (Diphoton_MVAOutput>-0.78);
-     fillhisto[2]=fillhisto[1]&&(Diphoton_LeadHasPixSeed&&Diphoton_SubLeadHasPixSeed);//Denominator haspixelseed study //Temporary
-     fillhisto[3]=fillhisto[2]&&(bit194||bit195||bit205);//Numerator haspixelseed study //Temporary
-     fillhisto[4]=fillhisto[1]&&(bit194||bit195||bit205);//Numerator study;
-     fillhisto[5]=false; //Future Studies
-     fillhisto[6]=false; //Future Studies
+     /*
+       bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass60_v5
+       bit_195_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass70_v1
+       bit_205_HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22_R9Id85_OR_CaloId10_Iso50_v5
+     */
      
-     /*event_hlt_bit.bit24;
-       event_hlt_bit.bit25 
-       event_hlt_bit.bit35;*/
+
+     bool hlt_bit;
+
+     if(event_RunID==206859){
+       //periodD
+       hlt_bit=(bit195||bit205);
+     }else{
+       //periodABC
+       hlt_bit=(bit194||bit195||bit205);
+     }
+
+
+     bool selection=  //html
+       //Avoid Transition region //html
+       !((fabs(Diphoton_LeadEta)>1.4442&&fabs(Diphoton_LeadEta)<1.5660)||(fabs(Diphoton_SubLeadEta)>1.4442&&fabs(Diphoton_SubLeadEta)<1.5660)) //html
+       //html
+       &&//Demand that both photons are gen-matched with real ones by asking GenGaGaFlag>=2`//html
+       (Diphoton_LeadIsGenMatched>0 && Diphoton_SubLeadIsGenMatched>0)//html
+       //html
+       &&//Demand that both photons pass the MIT Precut_index//html
+       (Diphoton_LeadMITPre>0&&Diphoton_SubLeadMITPre>0)//html
+       //html
+       &&//both photonIDMVA outputs are above the loose cut//html
+       (Diphoton_LeadMVAOutput>-0.2&&Diphoton_SubLeadMVAOutput>-0.2)//html
+       //html
+       &&//diphotonMVA output is also above the minimum cut//html
+       (Diphoton_MVAOutput>-0.78)//html
+       ;//html
+       //html
+     cut[0]=true; //all minitree level just for reference.//html 
+     //html
+     cut[1]=selection;//bool for Numerator (cut_index) DENOMINATOR 21 //html
+     cut[2]=cut[1]&&hlt_bit;//Numerator study without ptNormcuts NUMERATOR 21//html
+     //html
+     cut[3]=selection&&(Diphoton_LeadEt>33.333 && Diphoton_SubLeadEt>25.);//Adding Absolute pt cuts DENOMINATOR  43//html
+     cut[4]=cut[3]&&hlt_bit;//Numerator study with ptNormcuts NUMERATOR 43//html
+     //html
+     cut[5]=selection&&(Diphoton_LeadEt/Diphoton_Mass>0.36 && Diphoton_SubLeadEt/Diphoton_Mass>0.25);//Adding Normalized pt cuts DENOMINATOR 65//html
+     cut[6]=cut[5]&&hlt_bit; //Future Studies NUMERATOR 65//html
      
      /*
-     std::cout<<"fillhisto2 ";
-     for(selection=0;selection<7  ;selection++){
-       std::cout<<fillhisto[selection]<<" ";
-     }
+     event_hlt_bit.bit24;
+     event_hlt_bit.bit25 
+     event_hlt_bit.bit35;
+     std::cout<<"cut2";
+     for(cut_index=0;cut_index<7  ;cut_index++) std::cout<<cut[cut_index]<<" ";
      std::cout<<std::endl;
      */
      
-     for(selection=0;selection<7  ;selection++){ //Loop over the different histograms                                                               
-       if(fillhisto[selection]){ //all hitograms below will be filled up if the boolean is true.                                                             
-	 phi1phi2[selection]->Fill(Diphoton_LeadPhi,Diphoton_SubLeadPhi);
-	 eta1eta2[selection]->Fill(Diphoton_LeadEta,Diphoton_SubLeadEta);
-	 pt1pt2[selection]->Fill(Diphoton_LeadEt,Diphoton_SubLeadEt);
-	 pt1pt2Norm[selection]->Fill(Diphoton_LeadEt/Diphoton_Mass,Diphoton_SubLeadEt/Diphoton_Mass);
-	 wide_pt1pt2[selection]->Fill(Diphoton_LeadEt,Diphoton_SubLeadEt);
-	 higgsEta[selection]->Fill(Diphoton_Eta);
-	 higgsPhi[selection]->Fill(Diphoton_Phi);
-	 higgsP[selection]->Fill(Diphoton_PT);                                                                      
-	 higgsPt[selection]->Fill(Diphoton_PT);
-	 ptLead[selection]->Fill(Diphoton_LeadEt);
-	 ptTrail[selection]->Fill(Diphoton_SubLeadEt);
-	 ptLeadNorm[selection]->Fill(Diphoton_LeadEt/Diphoton_Mass);
-	 ptTrailNorm[selection]->Fill(Diphoton_SubLeadEt/Diphoton_Mass);
-	 massHiggshisto[selection]->Fill(Diphoton_Mass);
-	 massDiphotonhisto[selection]->Fill(Diphoton_Mass);
+     for(cut_index=0;cut_index<7  ;cut_index++){ //Loop over the different histograms                                                               
+       if(cut[cut_index]){ //all hitograms below will be filled up if the boolean is true.                                                             
+	 cutflow->Fill(cut_index);
+	 phi1phi2[cut_index]->Fill(Diphoton_LeadPhi,Diphoton_SubLeadPhi);
+	 eta1eta2[cut_index]->Fill(Diphoton_LeadEta,Diphoton_SubLeadEta);
+	 pt1pt2[cut_index]->Fill(Diphoton_LeadEt,Diphoton_SubLeadEt);
+	 pt1pt2Norm[cut_index]->Fill(Diphoton_LeadEt/Diphoton_Mass,Diphoton_SubLeadEt/Diphoton_Mass);
+	 pt1pt2Zoom[cut_index]->Fill(Diphoton_LeadEt/Diphoton_Mass,Diphoton_SubLeadEt/Diphoton_Mass);
+	 wide_pt1pt2[cut_index]->Fill(Diphoton_LeadEt,Diphoton_SubLeadEt);
+	 higgsEta[cut_index]->Fill(Diphoton_Eta);
+	 higgsPhi[cut_index]->Fill(Diphoton_Phi);
+	 higgsP[cut_index]->Fill(Diphoton_PT);                                                                      
+	 higgsPt[cut_index]->Fill(Diphoton_PT);
+	 ptLead[cut_index]->Fill(Diphoton_LeadEt);
+	 ptTrail[cut_index]->Fill(Diphoton_SubLeadEt);
+	 ptLeadNorm[cut_index]->Fill(Diphoton_LeadEt/Diphoton_Mass);
+	 ptTrailNorm[cut_index]->Fill(Diphoton_SubLeadEt/Diphoton_Mass);
+	 massHiggshisto[cut_index]->Fill(Diphoton_Mass);
+	 massDiphotonhisto[cut_index]->Fill(Diphoton_Mass);
        }
      }
      //jentry=nentries;
@@ -200,22 +234,24 @@ void READING_DIPHOTON_TREE::Loop()
    
    std::cout<<"beginning endJob"<<std::endl;
    theFileOut->cd();
-   for(selection=0;selection<7  ;selection++){ //Loop over the different histograms                                                                    
-     ptLead[selection]->Write();
-     ptTrail[selection]->Write();
-     ptLeadNorm[selection]->Write();
-     ptTrailNorm[selection]->Write();
-     massDiphotonhisto[selection]->Write();
-     massHiggshisto[selection]->Write();
-     higgsEta[selection]->Write();
-     higgsPhi[selection]->Write();
-     higgsP[selection]->Write();
-     higgsPt[selection]->Write();
-     phi1phi2[selection]->Write();
-     eta1eta2[selection]->Write();
-     pt1pt2[selection]->Write();
-     pt1pt2Norm[selection]->Write();
-     wide_pt1pt2[selection]->Write();
+   cutflow->Write();
+   for(cut_index=0;cut_index<7  ;cut_index++){ //Loop over the different histograms                                                                    
+     ptLead[cut_index]->Write();
+     ptTrail[cut_index]->Write();
+     ptLeadNorm[cut_index]->Write();
+     ptTrailNorm[cut_index]->Write();
+     massDiphotonhisto[cut_index]->Write();
+     massHiggshisto[cut_index]->Write();
+     higgsEta[cut_index]->Write();
+     higgsPhi[cut_index]->Write();
+     higgsP[cut_index]->Write();
+     higgsPt[cut_index]->Write();
+     phi1phi2[cut_index]->Write();
+     eta1eta2[cut_index]->Write();
+     pt1pt2[cut_index]->Write();
+     pt1pt2Norm[cut_index]->Write();
+     pt1pt2Zoom[cut_index]->Write();
+     wide_pt1pt2[cut_index]->Write();
    }
    theFileOut->Close();
   
