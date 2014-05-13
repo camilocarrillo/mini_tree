@@ -1,0 +1,13 @@
+
+for i in `cat $1`
+do 
+echo "starting $i"
+./scripts/execute_folder.sh $i > output.$i.txt 
+echo "finishing $i"
+done
+./scripts/hadds.sh $1
+
+
+
+
+
