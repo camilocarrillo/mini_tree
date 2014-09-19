@@ -316,8 +316,8 @@ void higgs_hlt10(){
   C1->cd();
 
   
-  float min=0.2;
-  float max=0.99;
+  float min=0.0;
+  float max=1.0;
   ggh->SetMinimum(min);ggh->SetMaximum(max);
   vbf->SetMinimum(min);vbf->SetMaximum(max);
   wzh->SetMinimum(min);wzh->SetMaximum(max);
@@ -341,5 +341,58 @@ void higgs_hlt10(){
   leg->Draw("same");
   
   C1->SaveAs("summary10.png");
+
+  min=0.9;
+  max=1.0;
+  ggh->SetMinimum(min);ggh->SetMaximum(max);
+  vbf->SetMinimum(min);vbf->SetMaximum(max);
+  wzh->SetMinimum(min);wzh->SetMaximum(max);
+  tth->SetMinimum(min);tth->SetMaximum(max);
+  
+  ggh->Draw("AP"); 
+  vbf->Draw("Psame"); 
+  wzh->Draw("Psame"); 
+  tth->Draw("Psame"); 
+
+  C1->Update();
+
+  TLegend *leg = new TLegend(0.6,0.35,0.7,0.2);
+  //leg->AddEntry(glui,"gluino split-SUSY","lp");                                                                                                               
+  //leg->AddEntry(stop,"stop MSSM","lp");                                                                                                                       
+  leg->AddEntry(ggh,"ggh","p");
+  leg->AddEntry(vbf,"vbf","p");
+  leg->AddEntry(tth,"tth","p");
+  leg->AddEntry(wzh,"wzh","p");
+  leg->SetFillColor(0);
+  leg->Draw("same");
+  
+  C1->SaveAs("summary10_0p9.png");
+
+  min=0.7;
+  max=1.0;
+  ggh->SetMinimum(min);ggh->SetMaximum(max);
+  vbf->SetMinimum(min);vbf->SetMaximum(max);
+  wzh->SetMinimum(min);wzh->SetMaximum(max);
+  tth->SetMinimum(min);tth->SetMaximum(max);
+  
+  ggh->Draw("AP"); 
+  vbf->Draw("Psame"); 
+  wzh->Draw("Psame"); 
+  tth->Draw("Psame"); 
+
+  C1->Update();
+
+  TLegend *leg = new TLegend(0.6,0.35,0.7,0.2);
+  //leg->AddEntry(glui,"gluino split-SUSY","lp");                                                                                                               
+  //leg->AddEntry(stop,"stop MSSM","lp");                                                                                                                       
+  leg->AddEntry(ggh,"ggh","p");
+  leg->AddEntry(vbf,"vbf","p");
+  leg->AddEntry(tth,"tth","p");
+  leg->AddEntry(wzh,"wzh","p");
+  leg->SetFillColor(0);
+  leg->Draw("same");
+  
+  C1->SaveAs("summary10_0p7.png");
+
   exit(0);
 }

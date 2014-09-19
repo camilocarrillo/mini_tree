@@ -28,7 +28,7 @@ void matrix(){
   //Lead
   
   Ca0->cd();
-  theFile= TFile::Open("ggh_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"2","1","Lead");
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"2","1","Lead");
   theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"2","1","Lead");
   theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"2","1","Lead");
   theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"2","1","Lead");
@@ -38,7 +38,7 @@ void matrix(){
   Ca0->Clear();
 
   Ca0->cd();
-  theFile= TFile::Open("vbf_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"2","1","Lead");
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"2","1","Lead");
   theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"2","1","Lead");
   theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"2","1","Lead");
   theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"2","1","Lead");
@@ -68,7 +68,7 @@ void matrix(){
   //Trail
   
   Ca0->cd();
-  theFile= TFile::Open("ggh_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"2","1","Trail");
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"2","1","Trail");
   theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"2","1","Trail");
   theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"2","1","Trail");
   theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"2","1","Trail");
@@ -78,7 +78,7 @@ void matrix(){
   Ca0->Clear();
 
   Ca0->cd();
-  theFile= TFile::Open("vbf_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"2","1","Trail");
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"2","1","Trail");
   theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"2","1","Trail");
   theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"2","1","Trail");
   theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"2","1","Trail");
@@ -111,7 +111,7 @@ void matrix(){
   //Lead
   
   Ca0->cd();
-  theFile= TFile::Open("ggh_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"4","3","Lead");
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"4","3","Lead");
   theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"4","3","Lead");
   theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"4","3","Lead");
   theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"4","3","Lead");
@@ -121,7 +121,7 @@ void matrix(){
   Ca0->Clear();
 
   Ca0->cd();
-  theFile= TFile::Open("vbf_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"4","3","Lead");
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"4","3","Lead");
   theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"4","3","Lead");
   theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"4","3","Lead");
   theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"4","3","Lead");
@@ -151,7 +151,7 @@ void matrix(){
   //Trail
   
   Ca0->cd();
-  theFile= TFile::Open("ggh_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"4","3","Trail");
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"4","3","Trail");
   theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"4","3","Trail");
   theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"4","3","Trail");
   theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"4","3","Trail");
@@ -161,7 +161,7 @@ void matrix(){
   Ca0->Clear();
 
   Ca0->cd();
-  theFile= TFile::Open("vbf_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"4","3","Trail");
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"4","3","Trail");
   theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"4","3","Trail");
   theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"4","3","Trail");
   theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"4","3","Trail");
@@ -194,7 +194,7 @@ void matrix(){
   //Lead
   
   Ca0->cd();
-  theFile= TFile::Open("ggh_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"6","5","Lead");
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"6","5","Lead");
   theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"6","5","Lead");
   theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"6","5","Lead");
   theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"6","5","Lead");
@@ -204,7 +204,7 @@ void matrix(){
   Ca0->Clear();
 
   Ca0->cd();
-  theFile= TFile::Open("vbf_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"6","5","Lead");
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"6","5","Lead");
   theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"6","5","Lead");
   theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"6","5","Lead");
   theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"6","5","Lead");
@@ -234,7 +234,7 @@ void matrix(){
   //Trail
   
   Ca0->cd();
-  theFile= TFile::Open("ggh_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"6","5","Trail");
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"6","5","Trail");
   theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"6","5","Trail");
   theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"6","5","Trail");
   theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"6","5","Trail");
@@ -244,7 +244,7 @@ void matrix(){
   Ca0->Clear();
 
   Ca0->cd();
-  theFile= TFile::Open("vbf_m80_8TeV_Fan/output.root");binomialEfficiency1D(theFile,2,true,"80",leg,"6","5","Trail");
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"6","5","Trail");
   theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"6","5","Trail");
   theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"6","5","Trail");
   theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"6","5","Trail");
@@ -270,6 +270,89 @@ void matrix(){
   leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/wzhTrail65.png"));
   leg->Clear();
   Ca0->Clear();
+
+  //87
+  
+  //Lead
+  
+  Ca0->cd();
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"8","7","Lead");
+  theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"8","7","Lead");
+  theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Lead");
+  theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Lead");
+  theFile= TFile::Open("ggh_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Lead");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/gghLead87.png"));
+  leg->Clear();
+  Ca0->Clear();
+
+  Ca0->cd();
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");binomialEfficiency1D(theFile,2,true,"70",leg,"8","7","Lead");
+  theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"8","7","Lead");
+  theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Lead");
+  theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Lead");
+  theFile= TFile::Open("vbf_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Lead");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/vbfLead87.png"));
+  leg->Clear();
+  Ca0->Clear();
+  
+  Ca0->cd();
+  theFile= TFile::Open("tth_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,true,"90",leg,"8","7","Lead");
+  theFile= TFile::Open("tth_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Lead");
+  theFile= TFile::Open("tth_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Lead");
+  theFile= TFile::Open("tth_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Lead");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/tthLead87.png"));
+  leg->Clear();
+  Ca0->Clear();
+  
+  Ca0->cd();
+  theFile= TFile::Open("wzh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,true,"90",leg,"8","7","Lead");
+  theFile= TFile::Open("wzh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Lead");
+  theFile= TFile::Open("wzh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Lead");
+  theFile= TFile::Open("wzh_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Lead");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/wzhLead87.png"));
+  leg->Clear();
+  Ca0->Clear();
+
+  //Trail
+  
+  Ca0->cd();
+  theFile= TFile::Open("ggh_m70_8TeV/output.root");    binomialEfficiency1D(theFile,2,true,"70",leg,"8","7","Trail");
+  theFile= TFile::Open("ggh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"8","7","Trail");
+  theFile= TFile::Open("ggh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Trail");
+  theFile= TFile::Open("ggh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Trail");
+  theFile= TFile::Open("ggh_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Trail");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/gghTrail87.png"));
+  leg->Clear();
+  Ca0->Clear();
+
+  Ca0->cd();
+  theFile= TFile::Open("vbf_m70_8TeV/output.root");    binomialEfficiency1D(theFile,2,true,"70",leg,"8","7","Trail");
+  theFile= TFile::Open("vbf_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,false,"90",leg,"8","7","Trail");
+  theFile= TFile::Open("vbf_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Trail");
+  theFile= TFile::Open("vbf_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Trail");
+  theFile= TFile::Open("vbf_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Trail");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/vbfTrail87.png"));
+  leg->Clear();
+  Ca0->Clear();
+  
+  Ca0->cd();
+  theFile= TFile::Open("tth_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,true,"90",leg,"8","7","Trail");
+  theFile= TFile::Open("tth_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Trail");
+  theFile= TFile::Open("tth_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Trail");
+  theFile= TFile::Open("tth_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Trail");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/tthTrail87.png"));
+  leg->Clear();
+  Ca0->Clear();
+
+  Ca0->cd();
+  theFile= TFile::Open("wzh_m90_8TeV/output.root");    binomialEfficiency1D(theFile,4,true,"90",leg,"8","7","Trail");
+  theFile= TFile::Open("wzh_m110_8TeV/output.root");   binomialEfficiency1D(theFile,5,false,"110",leg,"8","7","Trail");
+  theFile= TFile::Open("wzh_m130_8TeV/output.root");   binomialEfficiency1D(theFile,6,false,"130",leg,"8","7","Trail");
+  theFile= TFile::Open("wzh_m150_8TeV/output.root");   binomialEfficiency1D(theFile,1,false,"150",leg,"8","7","Trail");
+  leg->SetFillColor(0); leg->Draw("same"); Ca0->SaveAs(("matrix/wzhTrail87.png"));
+  leg->Clear();
+  Ca0->Clear();
+
   
   exit(0);
   

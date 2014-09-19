@@ -18,11 +18,7 @@ float error(TFile * theFile){
 
 void higgs_hlt65(){
 
-  //ggh_m80_8TeV_Fan
-  //ggh_m85_8TeV_Fan
-
-
-  float x[16], ex[16];
+  float x[17], ex[17];
   float x2[18], ex2[18];
 
    TFile *_fileggh0 = TFile::Open("ggh_m80_8TeV_Fan/output.root");
@@ -44,23 +40,24 @@ void higgs_hlt65(){
   TFile *_fileggh16 = TFile::Open("ggh_m140_8TeV/output.root");
   TFile *_fileggh17 = TFile::Open("ggh_m150_8TeV/output.root");
 
-
-   TFile *_filetth0 = TFile::Open("tth_m90_8TeV/output.root");
-   TFile *_filetth1 = TFile::Open("tth_m95_8TeV/output.root");
-   TFile *_filetth2 = TFile::Open("tth_m100_8TeV/output.root");
-   TFile *_filetth3 = TFile::Open("tth_m110_8TeV/output.root");
-   TFile *_filetth4 = TFile::Open("tth_m120_8TeV/output.root");
-   TFile *_filetth5 = TFile::Open("tth_m124_8TeV/output.root");
-   TFile *_filetth6 = TFile::Open("tth_m126_8TeV/output.root");
-   TFile *_filetth7 = TFile::Open("tth_m135_8TeV/output.root");
-   TFile *_filetth8 = TFile::Open("tth_m145_8TeV/output.root");
-   TFile *_filetth9 = TFile::Open("tth_m105_8TeV/output.root");
-  TFile *_filetth10 = TFile::Open("tth_m115_8TeV/output.root");
-  TFile *_filetth11 = TFile::Open("tth_m123_8TeV/output.root");
-  TFile *_filetth12 = TFile::Open("tth_m125_8TeV/output.root");
-  TFile *_filetth13 = TFile::Open("tth_m130_8TeV/output.root");
-  TFile *_filetth14 = TFile::Open("tth_m140_8TeV/output.root");
-  TFile *_filetth15 = TFile::Open("tth_m150_8TeV/output.root");
+   TFile *_filetth0 = TFile::Open("tth_m80_8TeV/output.root");
+   TFile *_filetth1 = TFile::Open("tth_m85_8TeV/output.root");
+   TFile *_filetth2 = TFile::Open("tth_m90_8TeV/output.root"); 
+   TFile *_filetth3 = TFile::Open("tth_m95_8TeV/output.root"); 
+   TFile *_filetth4 = TFile::Open("tth_m100_8TeV/output.root");
+   TFile *_filetth5 = TFile::Open("tth_m110_8TeV/output.root");
+   TFile *_filetth6 = TFile::Open("tth_m120_8TeV/output.root");
+   TFile *_filetth7 = TFile::Open("tth_m124_8TeV/output.root");
+   TFile *_filetth8 = TFile::Open("tth_m126_8TeV/output.root");
+   TFile *_filetth9 = TFile::Open("tth_m135_8TeV/output.root");
+  TFile *_filetth10 = TFile::Open("tth_m145_8TeV/output.root");
+  TFile *_filetth11 = TFile::Open("tth_m105_8TeV/output.root");
+  TFile *_filetth12 = TFile::Open("tth_m115_8TeV/output.root");
+  TFile *_filetth13 = TFile::Open("tth_m123_8TeV/output.root");
+  TFile *_filetth14 = TFile::Open("tth_m125_8TeV/output.root");
+  TFile *_filetth15 = TFile::Open("tth_m130_8TeV/output.root");
+  TFile *_filetth16 = TFile::Open("tth_m140_8TeV/output.root");
+  TFile *_filetth17 = TFile::Open("tth_m150_8TeV/output.root");
 
    TFile *_filevbf0 = TFile::Open("vbf_m80_8TeV_Fan/output.root");
    TFile *_filevbf1 = TFile::Open("vbf_m85_8TeV_Fan/output.root");
@@ -81,43 +78,44 @@ void higgs_hlt65(){
   TFile *_filevbf16 = TFile::Open("vbf_m140_8TeV/output.root");
   TFile *_filevbf17 = TFile::Open("vbf_m150_8TeV/output.root");
 
+   TFile *_filewzh0 = TFile::Open("wzh_m85_8TeV/output.root"); 
+   TFile *_filewzh1 = TFile::Open("wzh_m90_8TeV/output.root"); 
+   TFile *_filewzh2 = TFile::Open("wzh_m95_8TeV/output.root"); 
+   TFile *_filewzh3 = TFile::Open("wzh_m100_8TeV/output.root");
+   TFile *_filewzh4 = TFile::Open("wzh_m110_8TeV/output.root");
+   TFile *_filewzh5 = TFile::Open("wzh_m120_8TeV/output.root");
+   TFile *_filewzh6 = TFile::Open("wzh_m124_8TeV/output.root");
+   TFile *_filewzh7 = TFile::Open("wzh_m126_8TeV/output.root");
+   TFile *_filewzh8 = TFile::Open("wzh_m135_8TeV/output.root");
+   TFile *_filewzh9 = TFile::Open("wzh_m145_8TeV/output.root");
+  TFile *_filewzh10 = TFile::Open("wzh_m105_8TeV/output.root");
+  TFile *_filewzh11 = TFile::Open("wzh_m115_8TeV/output.root");
+  TFile *_filewzh12 = TFile::Open("wzh_m123_8TeV/output.root");
+  TFile *_filewzh13 = TFile::Open("wzh_m125_8TeV/output.root");
+  TFile *_filewzh14 = TFile::Open("wzh_m130_8TeV/output.root");
+  TFile *_filewzh15 = TFile::Open("wzh_m140_8TeV/output.root");
+  TFile *_filewzh16 = TFile::Open("wzh_m150_8TeV/output.root");
   
-  TFile *_filewzh0 = TFile::Open("wzh_m90_8TeV/output.root");
-   TFile *_filewzh1 = TFile::Open("wzh_m95_8TeV/output.root");
-   TFile *_filewzh2 = TFile::Open("wzh_m100_8TeV/output.root");
-   TFile *_filewzh3 = TFile::Open("wzh_m110_8TeV/output.root");
-   TFile *_filewzh4 = TFile::Open("wzh_m120_8TeV/output.root");
-   TFile *_filewzh5 = TFile::Open("wzh_m124_8TeV/output.root");
-   TFile *_filewzh6 = TFile::Open("wzh_m126_8TeV/output.root");
-   TFile *_filewzh7 = TFile::Open("wzh_m135_8TeV/output.root");
-   TFile *_filewzh8 = TFile::Open("wzh_m145_8TeV/output.root");
-   TFile *_filewzh9 = TFile::Open("wzh_m105_8TeV/output.root");
-  TFile *_filewzh10 = TFile::Open("wzh_m115_8TeV/output.root");
-  TFile *_filewzh11 = TFile::Open("wzh_m123_8TeV/output.root");
-  TFile *_filewzh12 = TFile::Open("wzh_m125_8TeV/output.root");
-  TFile *_filewzh13 = TFile::Open("wzh_m130_8TeV/output.root");
-  TFile *_filewzh14 = TFile::Open("wzh_m140_8TeV/output.root");
-  TFile *_filewzh15 = TFile::Open("wzh_m150_8TeV/output.root");
-  
-  float avEFFggh[18],avEFFtth[16],avEFFwzh[16],avEFFvbf[18];
-  float avERRggh[18],avERRtth[16],avERRwzh[16],avERRvbf[18];
+  float avEFFggh[18],avEFFtth[18],avEFFwzh[17],avEFFvbf[18];
+  float avERRggh[18],avERRtth[18],avERRwzh[17],avERRvbf[18];
  
-  x[0] = 90.0;
-  x[1] = 95.0;
-  x[2] = 100.0;
-  x[3] = 110.0;
-  x[4] = 120.0;
-  x[5] = 124.0;
-  x[6] = 126.0;
-  x[7] = 135.0;
-  x[8] = 145.0;
-  x[9] = 105.0;
-  x[10] = 115.0;
-  x[11] = 123.0;
-  x[12] = 125.0;
-  x[13] = 130.0;
-  x[14] = 140.0;
-  x[15] = 150.0;
+  x[0] = 85.0;
+  x[1] = 90.0;	
+  x[2] = 95.0;	
+  x[3] = 100.0;	
+  x[4] = 110.0;	
+  x[5] = 120.0;	
+  x[6] = 124.0;	
+  x[7] = 126.0;	
+  x[8] = 135.0;	
+  x[9] = 145.0;	
+  x[10] =105.0;	
+  x[11] = 115.0;
+  x[12] = 123.0;
+  x[13] = 125.0;
+  x[14] = 130.0;
+  x[15] = 140.0;
+  x[16] = 150.0;
 
   x2[0]  = 80.0;
   x2[1]  = 85.0;
@@ -138,7 +136,7 @@ void higgs_hlt65(){
   x2[16] = 140.0;
   x2[17] = 150.0;
 
-  for(int k=0;k<16;k++) ex[k] = 0;
+  for(int k=0;k<17;k++) ex[k] = 0;
   for(k=0;k<18;k++) ex2[k] = 0;
   
   avEFFggh[0] = efficiency(_fileggh0);
@@ -176,6 +174,8 @@ void higgs_hlt65(){
   avEFFtth[13] = efficiency(_filetth13);
   avEFFtth[14] = efficiency(_filetth14);
   avEFFtth[15] = efficiency(_filetth15);
+  avEFFtth[16] = efficiency(_filetth16);
+  avEFFtth[17] = efficiency(_filetth17);
 
   avEFFvbf[0] = efficiency(_filevbf0);
   avEFFvbf[1] = efficiency(_filevbf1);
@@ -196,7 +196,6 @@ void higgs_hlt65(){
   avEFFvbf[16]= efficiency(_filevbf16);
   avEFFvbf[17]= efficiency(_filevbf17);
 
-
   avEFFwzh[0] = efficiency(_filewzh0);
   avEFFwzh[1] = efficiency(_filewzh1);
   avEFFwzh[2] = efficiency(_filewzh2);
@@ -213,6 +212,7 @@ void higgs_hlt65(){
   avEFFwzh[13] = efficiency(_filewzh13);
   avEFFwzh[14] = efficiency(_filewzh14);
   avEFFwzh[15] = efficiency(_filewzh15);
+  avEFFwzh[16] = efficiency(_filewzh16);
 
   avERRggh[0] = error(_fileggh0);
   avERRggh[1] = error(_fileggh1);
@@ -249,6 +249,8 @@ void higgs_hlt65(){
   avERRtth[13] = error(_filetth13);
   avERRtth[14] = error(_filetth14);
   avERRtth[15] = error(_filetth15);
+  avERRtth[16] = error(_filetth16);
+  avERRtth[17] = error(_filetth17);
 
   avERRvbf[0] = error(_filevbf0);
   avERRvbf[1] = error(_filevbf1);
@@ -266,7 +268,8 @@ void higgs_hlt65(){
   avERRvbf[13] = error(_filevbf13);
   avERRvbf[14] = error(_filevbf14);
   avERRvbf[15] = error(_filevbf15);
-
+  avERRvbf[16] = error(_filevbf16);
+  avERRvbf[17] = error(_filevbf17);
 
   avERRwzh[0] = error(_filewzh0);
   avERRwzh[1] = error(_filewzh1);
@@ -284,6 +287,7 @@ void higgs_hlt65(){
   avERRwzh[13] = error(_filewzh13);
   avERRwzh[14] = error(_filewzh14);
   avERRwzh[15] = error(_filewzh15);
+  avERRwzh[16] = error(_filewzh16);
 
   cout << x[0] <<" : " << avEFFggh[0] << "------" << avERRggh[0] << endl;
   cout << x[1] <<" : " << avEFFggh[1] << "------" << avERRggh[1] << endl;
@@ -292,8 +296,8 @@ void higgs_hlt65(){
     
   TGraphErrors * ggh = new TGraphErrors(18,x2,avEFFggh,ex2,avERRggh);
   TGraphErrors * vbf = new TGraphErrors(18,x2,avEFFvbf,ex2,avERRvbf);
-  TGraphErrors * wzh = new TGraphErrors(16,x,avEFFwzh,ex,avERRwzh);
-  TGraphErrors * tth = new TGraphErrors(16,x,avEFFtth,ex,avERRtth);
+  TGraphErrors * wzh = new TGraphErrors(17,x,avEFFwzh,ex,avERRwzh);
+  TGraphErrors * tth = new TGraphErrors(18,x2,avEFFtth,ex2,avERRtth);
 
   ggh->SetMarkerStyle(22);ggh->SetMarkerSize(2.0); 
   vbf->SetMarkerStyle(23);vbf->SetMarkerSize(2.0); 
@@ -341,5 +345,59 @@ void higgs_hlt65(){
   leg->Draw("same");
   
   C1->SaveAs("summary65.png");
+
+  //Drawing2                                                                                                                                                                                                      
+  float min=0.9;
+  float max=1.;
+
+  ggh->SetMinimum(min);ggh->SetMaximum(max);
+  vbf->SetMinimum(min);vbf->SetMaximum(max);
+  wzh->SetMinimum(min);wzh->SetMaximum(max);
+  tth->SetMinimum(min);tth->SetMaximum(max);
+
+  ggh->Draw("AP");
+  vbf->Draw("Psame");
+  wzh->Draw("Psame");
+  tth->Draw("Psame");
+
+  C1->Update();
+
+  TLegend *leg = new TLegend(0.6,0.35,0.7,0.2);
+  leg->AddEntry(ggh,"ggh","p");
+  leg->AddEntry(vbf,"vbf","p");
+  leg->AddEntry(tth,"tth","p");
+  leg->AddEntry(wzh,"wzh","p");
+  leg->SetFillColor(0);
+  leg->Draw("same");
+
+  C1->SaveAs("summary65_0p9.png");
+
+  //Drawing2                                                                                                                                                                                                      
+  float min=0.0;
+  float max=1.;
+
+  ggh->SetMinimum(min);ggh->SetMaximum(max);
+  vbf->SetMinimum(min);vbf->SetMaximum(max);
+  wzh->SetMinimum(min);wzh->SetMaximum(max);
+  tth->SetMinimum(min);tth->SetMaximum(max);
+
+  ggh->Draw("AP");
+  vbf->Draw("Psame");
+  wzh->Draw("Psame");
+  tth->Draw("Psame");
+
+  C1->Update();
+
+  TLegend *leg = new TLegend(0.6,0.35,0.7,0.2);
+  leg->AddEntry(ggh,"ggh","p");
+  leg->AddEntry(vbf,"vbf","p");
+  leg->AddEntry(tth,"tth","p");
+  leg->AddEntry(wzh,"wzh","p");
+  leg->SetFillColor(0);
+  leg->Draw("same");
+
+  C1->SaveAs("summary65_0p0.png");
+
+
   exit(0);
 }

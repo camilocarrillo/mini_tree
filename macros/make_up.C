@@ -19,9 +19,7 @@ void make_up(){
   gStyle->SetPalette(1);
   gStyle->SetPaintTextFormat("2.3f");
   
-  //TFile * theFile = new TFile("/afs/cern.ch/user/c/carrillo/higgs/yy/hlt/CMSSW_5_3_2_patch4/src/genAnalyzer/GenAnalyzer/genAnalyzer.root");
   TFile * theFile = new TFile("output.root");
-  //TFile * theFile = new TFile("HiggsGenHltRecoAnalyzer/test/genAnalyzer.root");
 
   system("mkdir plots");
 
@@ -124,7 +122,6 @@ void make_up(){
   Ca0->SaveAs(("plots/eff43_phi1phi2.png"));
   Ca0->Clear();
 
-
   cout<<"going for 2D 6/5"<<endl; 
 
   numerator  = (TH2F*) (theFile->Get("wide_pt1pt2_6"));
@@ -165,6 +162,48 @@ void make_up(){
   denominator= (TH2F*) (theFile->Get("phi1phi2_5"));
   binomialEfficiency2D(numerator,denominator,false,false);
   Ca0->SaveAs(("plots/eff65_phi1phi2.png"));
+  Ca0->Clear();
+
+  cout<<"going for 2D 8/7"<<endl; 
+
+  numerator  = (TH2F*) (theFile->Get("wide_pt1pt2_8"));
+  denominator= (TH2F*) (theFile->Get("wide_pt1pt2_7"));
+  binomialEfficiency2D(numerator,denominator,true,true);
+  Ca0->SaveAs(("plots/eff87_wide_pt1pt2.png"));
+  Ca0->Clear();
+  
+  numerator  = (TH2F*) (theFile->Get("pt1pt2_8"));
+  denominator= (TH2F*) (theFile->Get("pt1pt2_7"));
+  binomialEfficiency2D(numerator,denominator,false,true);
+  Ca0->SaveAs(("plots/eff87_pt1pt2.png"));
+  Ca0->Clear();
+
+  numerator  = (TH2F*) (theFile->Get("pt1pt2Norm_8"));
+  denominator= (TH2F*) (theFile->Get("pt1pt2Norm_7"));
+  denominator->GetXaxis()->SetTitle("p_{T} Lead / M_{#gamma #gamma}");
+  denominator->GetYaxis()->SetTitle("p_{T} Trail / M_{#gamma #gamma}");
+  binomialEfficiency2D(numerator,denominator,false,false);
+  Ca0->SaveAs(("plots/eff87_pt1pt2Norm.png"));
+  Ca0->Clear();
+
+  numerator  = (TH2F*) (theFile->Get("pt1pt2Zoom_8"));
+  denominator= (TH2F*) (theFile->Get("pt1pt2Zoom_7"));
+  denominator->GetXaxis()->SetTitle("p_{T} Lead / M_{#gamma #gamma}");
+  denominator->GetYaxis()->SetTitle("p_{T} Trail / M_{#gamma #gamma}");
+  binomialEfficiency2D(numerator,denominator,true,false);
+  Ca0->SaveAs(("plots/eff87_pt1pt2Zoom.png"));
+  Ca0->Clear();
+
+  numerator  = (TH2F*) (theFile->Get("eta1eta2_8"));
+  denominator= (TH2F*) (theFile->Get("eta1eta2_7"));
+  binomialEfficiency2D(numerator,denominator,false,false);
+  Ca0->SaveAs(("plots/eff87_eta1eta2.png"));
+  Ca0->Clear();
+
+  numerator  = (TH2F*) (theFile->Get("phi1phi2_8"));
+  denominator= (TH2F*) (theFile->Get("phi1phi2_7"));
+  binomialEfficiency2D(numerator,denominator,false,false);
+  Ca0->SaveAs(("plots/eff87_phi1phi2.png"));
   Ca0->Clear();
 
   cout<<"going for 2D 1/0"<<endl; 
@@ -209,8 +248,6 @@ void make_up(){
   Ca0->SaveAs(("plots/eff10_phi1phi2.png"));
   Ca0->Clear();
 
-
-
   //Binomial Efficiency 1D
 
   TH1F * numerator1D;
@@ -234,6 +271,18 @@ void make_up(){
   denominator1D = (TH1F*) (theFile->Get("higgsP_1"));
   binomialEfficiency1D(numerator1D,denominator1D,"p");
   Ca0->SaveAs(("plots/eff21_higgsP.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_2"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_1"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff21_diphoton_LeadR9.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_2"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_1"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff21_diphoton_SubLeadR9.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("higgsPt_2"));
@@ -298,6 +347,18 @@ void make_up(){
   Ca0->SaveAs(("plots/eff43_higgsP.png"));
   Ca0->Clear();
 
+  numerator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_4"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_3"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff43_diphoton_LeadR9.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_4"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_3"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff43_diphoton_SubLeadR9.png"));
+  Ca0->Clear();
+
   numerator1D = (TH1F*) (theFile->Get("higgsPt_4"));
   denominator1D = (TH1F*) (theFile->Get("higgsPt_3"));
   binomialEfficiency1D(numerator1D,denominator1D,"p");
@@ -360,6 +421,18 @@ void make_up(){
   Ca0->SaveAs(("plots/eff65_higgsP.png"));
   Ca0->Clear();
 
+  numerator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_6"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_5"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff65_diphoton_LeadR9.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_6"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_5"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff65_diphoton_SubLeadR9.png"));
+  Ca0->Clear();
+
   numerator1D = (TH1F*) (theFile->Get("higgsPt_6"));
   denominator1D = (TH1F*) (theFile->Get("higgsPt_5"));
   binomialEfficiency1D(numerator1D,denominator1D,"p");
@@ -401,6 +474,79 @@ void make_up(){
   binomialEfficiency1D(numerator1D,denominator1D,"pn");
   Ca0->SaveAs(("plots/eff65_ptTrailNorm.png"));
 
+  cout<<"going for 1D 8/7"<<endl; 
+
+  numerator1D = (TH1F*) (theFile->Get("higgsEta_8"));
+  denominator1D = (TH1F*) (theFile->Get("higgsEta_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"eta");
+  Ca0->SaveAs(("plots/eff87_higgsEta.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("higgsPhi_8"));
+  denominator1D = (TH1F*) (theFile->Get("higgsPhi_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"phi");
+  Ca0->SaveAs(("plots/eff87_higgsPhi.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("higgsP_8"));
+  denominator1D = (TH1F*) (theFile->Get("higgsP_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff87_higgsP.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_8"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff87_diphoton_LeadR9.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_8"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff87_diphoton_SubLeadR9.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("higgsPt_8"));
+  denominator1D = (TH1F*) (theFile->Get("higgsPt_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff87_higgsPt.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("massDiphoton_8"));
+  denominator1D = (TH1F*) (theFile->Get("massDiphoton_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"m");
+  Ca0->SaveAs(("plots/eff87_massDiphoton.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("massHiggs_8"));
+  denominator1D = (TH1F*) (theFile->Get("massHiggs_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"m");
+  Ca0->SaveAs(("plots/eff87_massHiggs.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("ptLead_8"));
+  denominator1D = (TH1F*) (theFile->Get("ptLead_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff87_ptLead.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("ptTrail_8"));
+  denominator1D = (TH1F*) (theFile->Get("ptTrail_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff87_ptTrail.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("ptLeadNorm_8"));
+  denominator1D = (TH1F*) (theFile->Get("ptLeadNorm_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"pn");
+  Ca0->SaveAs(("plots/eff87_ptLeadNorm.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("ptTrailNorm_8"));
+  denominator1D = (TH1F*) (theFile->Get("ptTrailNorm_7"));
+  binomialEfficiency1D(numerator1D,denominator1D,"pn");
+  Ca0->SaveAs(("plots/eff87_ptTrailNorm.png"));
+
 
   cout<<"going for 1D 1/0"<<endl; 
 
@@ -420,6 +566,18 @@ void make_up(){
   denominator1D = (TH1F*) (theFile->Get("higgsP_0"));
   binomialEfficiency1D(numerator1D,denominator1D,"p");
   Ca0->SaveAs(("plots/eff10_higgsP.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_1"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_LeadR9_0"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff10_diphoton_LeadR9.png"));
+  Ca0->Clear();
+
+  numerator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_1"));
+  denominator1D = (TH1F*) (theFile->Get("diphoton_SubLeadR9_0"));
+  binomialEfficiency1D(numerator1D,denominator1D,"p");
+  Ca0->SaveAs(("plots/eff10_diphoton_SubLeadR9.png"));
   Ca0->Clear();
 
   numerator1D = (TH1F*) (theFile->Get("higgsPt_1"));
@@ -490,29 +648,18 @@ void make_up(){
   Draw1D("higgsPhi","#phi_{H}","plots/",theFile,cut1,cut2);
   Draw1D("higgsPt","p (GeV)","plots/",theFile,cut1,cut2);
   Draw1D("higgsP","p (GeV)","plots/",theFile,cut1,cut2); 
-
-  cut1=1;
-  cut2=2;
-  Draw1D("higgsEta","#eta_{H}","plots/",theFile,cut1,cut2);
-  Draw1D("higgsPhi","#phi_{H}","plots/",theFile,cut1,cut2);
-  Draw1D("higgsPt","p (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("higgsP","p (GeV)","plots/",theFile,cut1,cut2); 
-
-  cut1=3;
-  cut2=4;
-  Draw1D("higgsEta","#eta_{H}","plots/",theFile,cut1,cut2);
-  Draw1D("higgsPhi","#phi_{H}","plots/",theFile,cut1,cut2);
-  Draw1D("higgsPt","p (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("higgsP","p (GeV)","plots/",theFile,cut1,cut2); 
-
-  cut1=5;
-  cut2=6;
-  Draw1D("higgsEta","#eta_{H}","plots/",theFile,cut1,cut2);
-  Draw1D("higgsPhi","#phi_{H}","plots/",theFile,cut1,cut2);
-  Draw1D("higgsPt","p (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("higgsP","p (GeV)","plots/",theFile,cut1,cut2); 
-
-  //Log Scale
+  Draw1D("diphoton_LeadR9","diphoton_LeadR9","plots/",theFile,cut1,cut2);
+  Draw1D("diphoton_SubLeadR9","diphoton_SubLeadR9","plots/",theFile,cut1,cut2);
+  
+  for(cut1=1;cut1<=7;cut1=cut1+2){
+    cut2=cut1+1;
+    Draw1D("higgsEta","#eta_{H}","plots/",theFile,cut1,cut2);
+    Draw1D("higgsPhi","#phi_{H}","plots/",theFile,cut1,cut2);
+    Draw1D("higgsPt","p (GeV)","plots/",theFile,cut1,cut2);
+    Draw1D("higgsP","p (GeV)","plots/",theFile,cut1,cut2); 
+    Draw1D("diphoton_LeadR9","diphoton_LeadR9","plots/",theFile,cut1,cut2);
+    Draw1D("diphoton_SubLeadR9","diphoton_SubLeadR9","plots/",theFile,cut1,cut2);
+  }
   
   Ca0->SetLogy();
 
@@ -524,34 +671,18 @@ void make_up(){
   Draw1D("ptTrailNorm","p_{T} Trail / M_{#gamma #gamma}","plots/",theFile,cut1,cut2);
   Draw1D("massDiphoton","mass_{#gamma #gamma} (GeV)","plots/",theFile,cut1,cut2);
   Draw1D("massHiggs","mass_{H} (GeV)","plots/",theFile,cut1,cut2);
-  
-  cut1=1;
-  cut2=2;
-  Draw1D("ptLead","p_{T} Lead (GeV)","plots/",theFile,cut1,cut2); 
-  Draw1D("ptTrail","p_{T} Trail (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("ptLeadNorm","p_{T} Lead / M_{#gamma #gamma} ","plots/",theFile,cut1,cut2); 
-  Draw1D("ptTrailNorm","p_{T} Trail / M_{#gamma #gamma}","plots/",theFile,cut1,cut2);
-  Draw1D("massDiphoton","mass_{#gamma #gamma} (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("massHiggs","mass_{H} (GeV)","plots/",theFile,cut1,cut2);
-  
-  cut1=3;
-  cut2=4;
-  Draw1D("ptLead","p_{T} Lead (GeV)","plots/",theFile,cut1,cut2); 
-  Draw1D("ptTrail","p_{T} Trail (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("ptLeadNorm","p_{T} Lead / M_{#gamma #gamma} ","plots/",theFile,cut1,cut2); 
-  Draw1D("ptTrailNorm","p_{T} Trail / M_{#gamma #gamma}","plots/",theFile,cut1,cut2);
-  Draw1D("massDiphoton","mass_{#gamma #gamma} (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("massHiggs","mass_{H} (GeV)","plots/",theFile,cut1,cut2);
 
-  cut1=5;
-  cut2=6;
-  Draw1D("ptLead","p_{T} Lead (GeV)","plots/",theFile,cut1,cut2); 
-  Draw1D("ptTrail","p_{T} Trail (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("ptLeadNorm","p_{T} Lead / M_{#gamma #gamma} ","plots/",theFile,cut1,cut2); 
-  Draw1D("ptTrailNorm","p_{T} Trail / M_{#gamma #gamma}","plots/",theFile,cut1,cut2);
-  Draw1D("massDiphoton","mass_{#gamma #gamma} (GeV)","plots/",theFile,cut1,cut2);
-  Draw1D("massHiggs","mass_{H} (GeV)","plots/",theFile,cut1,cut2);
-
+  
+  for(cut1=1;cut1<=7;cut1=cut1+2){
+    cut2=cut1+1;
+    Draw1D("ptLead","p_{T} Lead (GeV)","plots/",theFile,cut1,cut2); 
+    Draw1D("ptTrail","p_{T} Trail (GeV)","plots/",theFile,cut1,cut2);
+    Draw1D("ptLeadNorm","p_{T} Lead / M_{#gamma #gamma} ","plots/",theFile,cut1,cut2); 
+    Draw1D("ptTrailNorm","p_{T} Trail / M_{#gamma #gamma}","plots/",theFile,cut1,cut2);
+    Draw1D("massDiphoton","mass_{#gamma #gamma} (GeV)","plots/",theFile,cut1,cut2);
+    Draw1D("massHiggs","mass_{H} (GeV)","plots/",theFile,cut1,cut2);
+  }
+  
   exit(0);
 }
 
@@ -598,8 +729,8 @@ void Draw1D(string savedname,string theXtitle,string folder,TFile * theFile,int 
   
   TLegend *leg = new TLegend(0.65,0.93,0.89,0.7);
   
-  TH1F * histoArray[7  ];
-  for(int selection=0;selection<7  ;selection++){ //Loop over the different histograms
+  TH1F * histoArray[9  ];
+  for(int selection=0;selection<9  ;selection++){ //Loop over the different histograms
     //std::string histo = std::to_string(selection);
     char histo[20];
     sprintf(histo,"%d",selection);
@@ -612,25 +743,24 @@ void Draw1D(string savedname,string theXtitle,string folder,TFile * theFile,int 
     if(selection==0){
       histoArray[selection]->Draw();
       histoArray[selection]->SetFillColor(kBlue);
-      leg->AddEntry(histoArray[selection],"Minitree","f");
+      leg->AddEntry(histoArray[selection],"minitree","f");
     }else if(selection==1 && (cut1==1||cut2==1)){
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kRed);
-      leg->AddEntry(histoArray[selection],"#eta acceptance*gen_match","f");
+      leg->AddEntry(histoArray[selection],"cut[1]","f");
     }else if(selection==2 && (cut1==2||cut2==2)){
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kYellow);
-      leg->AddEntry(histoArray[selection],"HLT*presel*MVA*Ptabs*Ptnorm","f");
-      //leg->AddEntry(histoArray[selection],"cut[2]&&(HLT or presel)","f");
+      leg->AddEntry(histoArray[selection],"cut[2]","f");
     }else if(selection==3 && (cut1==3||cut2==3)){
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kRed);
-      leg->AddEntry(histoArray[selection],"#eta acceptance*gen_match","f");
+      leg->AddEntry(histoArray[selection],"cut[3]","f");
     }else if(selection==4 && (cut1==4||cut2==4)){
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kYellow);
-      leg->AddEntry(histoArray[selection],"HLT*presel*CiC*Ptabs*Ptnorm","f");
-      //leg->AddEntry(histoArray[selection],"cut[4]=selection&&AbsptCuts&&(HLT or presel)","f");
+      leg->AddEntry(histoArray[selection],"cut[4]","f");
+
     }else if(selection==5 && (cut1==5||cut2==5)){
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kRed);
@@ -639,6 +769,14 @@ void Draw1D(string savedname,string theXtitle,string folder,TFile * theFile,int 
       histoArray[selection]->Draw("same");
       histoArray[selection]->SetFillColor(kYellow);
       leg->AddEntry(histoArray[selection],"cut[6]","f");
+    }else if(selection==7 && (cut1==7||cut2==7)){
+      histoArray[selection]->Draw("same");
+      histoArray[selection]->SetFillColor(kRed);
+      leg->AddEntry(histoArray[selection],"cut[7]");
+    }else if(selection==8 && (cut1==8||cut2==8)){
+      histoArray[selection]->Draw("same");
+      histoArray[selection]->SetFillColor(kYellow);
+      leg->AddEntry(histoArray[selection],"cut[8]","f");
     }
     histoArray[selection]->SetXTitle(theXtitle.c_str());
     histoArray[selection]->SetMinimum(0.9);
@@ -687,14 +825,14 @@ void binomialEfficiency2D(TH2F * numerator,TH2F * denominator,bool text2D,bool p
 }
 
 void Draw2D(string savedname,string theXtitle,string theYtitle,string folder,TFile * theFile,bool text2D){
-  TH2F * histoArray[7  ];
-  for(int selection=0;selection<7  ;selection++){ //Loop over the different histograms
+  TH2F * histoArray[9  ];
+  for(int selection=0;selection<9  ;selection++){ //Loop over the different histograms
     //std::string histo = std::to_string(selection); THIS WORKS IN C++ BUT NOT IN CINT
     char histo[20];
     sprintf(histo,"%d",selection);
     //cout<<savedname+"_"+histo<<endl;
     histoArray[selection] = (TH2F*)(theFile->Get((savedname+"_"+histo).c_str()));
-    if(selection<7){
+    if(selection<9){
       histoArray[selection]->SetXTitle(theXtitle.c_str());
       histoArray[selection]->SetYTitle(theYtitle.c_str());
       if(text2D){

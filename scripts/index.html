@@ -2,86 +2,37 @@
 <head>
 <style type="text/css">
 <!--
-
 A:link {text-decoration: none;}
 A:visited {text-decoration: none;}
 A:active {text-decoration: none;}
 A:hover {text-decoration: none; color: #66ccff;}
 //-->
 </style>
-<title>Higgs studies</title>
+<title>Higgs HLT studies</title>
 </head>
 <body>
-<font size="8">Higgs studies<br></font><br>
+<font size="8">Higgs HLT studies<br></font><br>
 <font size="6">-folder-<br></font><br>
 
 <font size="10">HLT Efficiency Normalized to selection<br></font>
 
-<font size="8">Efficiencies<br></font>
-
-<table width="40%" border="1" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center">
-      <font size="8">Efficiency with Absolute pt Cuts</font>
-    </td>
-    <td align="center">
-      <font size="8">Zoom Efficiency with Absolute pt Cuts</font>
-    </td>
-  <tr>
-  <tr>
-    <td align="center">
-      <a href='./plots/eff43_wide_pt1pt2.png'>
-	<img width="900" border='0' src='./plots/eff43_wide_pt1pt2.png'>
-      </a>
-    </td>
-    <td align="center">
-      <a href='./plots/eff43_pt1pt2Zoom.png'>
-	<img width="900" border='0' src='./plots/eff43_pt1pt2Zoom.png'>
-      </a>
-    </td>
-  </tr>
-</table>
-
-<table width="40%" border="1" cellpadding="0" cellspacing="0">
-  <tr>
-    <td align="center">
-      <font size="8">Efficiency with Normalized pt Cuts</font>
-    </td>
-    <td align="center">
-      <font size="8">Zoom Efficiency with Normalized pt Cuts</font>
-    </td>
-  <tr>
-  <tr>
-    <td align="center">
-      <a href='./plots/eff65_wide_pt1pt2.png'>
-	<img width="900" border='0' src='./plots/eff65_wide_pt1pt2.png'>
-      </a>
-    </td>
-    <td align="center">
-      <a href='./plots/eff65_pt1pt2Zoom.png'>
-	<img width="900" border='0' src='./plots/eff65_pt1pt2Zoom.png'>
-      </a>
-    </td>
-  </tr>
-</table>
-
 <font size="8">Cuts definition and flow<br></font>
 HLT bits <br>
-bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass60_v5 OR <br> bit_195_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass70_v1 OR <br> bit_205_HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22_R9Id85_OR_CaloId10_Iso50_v5<br><br>
+bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass60 <br> bit_195_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass70 <br> bit_205_HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22_R9Id85_OR_CaloId10_Iso50 <br><br>
 
-<table border="1" cellpadding="0" cellspacing="0">
+<table width="40%" border="1" cellpadding="0" cellspacing="0">
     <tr>
-      <td align="center">
-	<font size="8">Cut flow</font>
-      </td>
-    </tr>
-    <tr>
-      <td>
-	<a href='./plots/cutflow.png'>
-	  <img width="900" border='0' src='./plots/cutflow.png'>
-	</a>
-      </td>
-    </tr>
+    <td align="center">
+      <font size="8">Cut flow</font>
+    </td>
+  <tr>
+  <tr>
+    <td align="center">
+      <a href='./plots/cutflow.png'>
+	<img width="600" border='0' src='./plots/cutflow.png'>
+      </a>
+    </td>
+  </tr>
 </table>
 
 <font size="8">2D Plots<br></font>
@@ -92,34 +43,43 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       <font size="8">cut[0]=minitree</font>
     </td>
     <td align="center">
-      <font size="8">cut[1]=selection</font>
+      <font size="8">cut[1]=denominator A</font>
     </td>
     <td align="center">
-      <font size="8">cut[2]=selection&&HLT</font>
+      <font size="8">cut[2]=numerator A</font>
     </td>
     <td align="center">
-      <font size="8">cut[3]=selection&&AbsptCuts</font>
+      <font size="8">cut[3]=denominator B</font>
     </td>
     <td align="center">
-      <font size="8">cut[4]=selection&&AbsptCuts&&HLT</font>
+      <font size="8">cut[4]=numerator B</font>
     </td>
     <td align="center">
-      <font size="8">cut[5]=selection&&NormptCuts</font>
+      <font size="8">cut[5]=denominator C</font>
     </td>
     <td align="center">
-      <font size="8">cut[6]=selection&&NormptCuts&&HLT</font>
+      <font size="8">cut[6]=numerator C</font>
     </td>
     <td align="center">
-      <font size="8">eff [1]/[0] (efficiency selection on minitree)</font>
+      <font size="8">cut[5]=denominator D</font>
     </td>
     <td align="center">
-      <font size="8">eff [2]/[1] (no ptcuts)</font>
+      <font size="8">cut[6]=numerator D</font>
     </td>
     <td align="center">
-      <font size="8">eff [4]/[3] (with Abs pt cuts)</font>
+      <font size="8">eff [1]/[0] </font>
     </td>
     <td align="center">
-      <font size="8">eff [6]/[5] (with Norm pt cuts)</font>
+      <font size="8">eff [2]/[1] A</font>
+    </td>
+    <td align="center">
+      <font size="8">eff [4]/[3] B</font>
+    </td>
+    <td align="center">
+      <font size="8">eff [6]/[5] C</font>
+    </td>
+    <td align="center">
+      <font size="8">eff [8]/[7] D</font>
     </td>
   </tr> 
   <tr>
@@ -159,6 +119,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       </a>
     </td>
     <td align="center">
+      <a href='./plots/wide_pt1pt2_7.png'>
+	<img width="600" border='0' src='./plots/wide_pt1pt2_7.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/wide_pt1pt2_8.png'>
+	<img width="600" border='0' src='./plots/wide_pt1pt2_8.png'>
+      </a>
+    </td>
+    <td align="center">
       <a href='./plots/eff10_wide_pt1pt2.png'>
 	<img width="600" border='0' src='./plots/eff10_wide_pt1pt2.png'>
       </a>
@@ -176,6 +146,11 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_wide_pt1pt2.png'>
 	<img width="600" border='0' src='./plots/eff65_wide_pt1pt2.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_wide_pt1pt2.png'>
+	<img width="600" border='0' src='./plots/eff87_wide_pt1pt2.png'>
       </a>
     </td>
   </tr> 
@@ -211,9 +186,19 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
 	<img width="600" border='0' src='./plots/pt1pt2_5.png'>
       </a>
     </td>
-  <td align="center">
+    <td align="center">
       <a href='./plots/pt1pt2_6.png'>
 	<img width="600" border='0' src='./plots/pt1pt2_6.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/pt1pt2_7.png'>
+	<img width="600" border='0' src='./plots/pt1pt2_7.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/pt1pt2_8.png'>
+	<img width="600" border='0' src='./plots/pt1pt2_8.png'>
       </a>
     </td>
     <td align="center">
@@ -234,6 +219,11 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_pt1pt2.png'>
 	<img width="600" border='0' src='./plots/eff65_pt1pt2.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_pt1pt2.png'>
+	<img width="600" border='0' src='./plots/eff87_pt1pt2.png'>
       </a>
     </td>
   </tr> 
@@ -274,6 +264,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       </a>
     </td>
     <td align="center">
+      <a href='./plots/pt1pt2Norm_6.png'>
+	<img width="600" border='0' src='./plots/pt1pt2Norm_7.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/pt1pt2Norm_6.png'>
+	<img width="600" border='0' src='./plots/pt1pt2Norm_8.png'>
+      </a>
+    </td>
+    <td align="center">
       <a href='./plots/eff10_pt1pt2Norm.png'>
 	<img width="600" border='0' src='./plots/eff10_pt1pt2Norm.png'>
       </a>
@@ -291,6 +291,11 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_pt1pt2Norm.png'>
 	<img width="600" border='0' src='./plots/eff65_pt1pt2Norm.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_pt1pt2Norm.png'>
+	<img width="600" border='0' src='./plots/eff87_pt1pt2Norm.png'>
       </a>
     </td>
   </tr> 
@@ -331,6 +336,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       </a>
     </td>
     <td align="center">
+      <a href='./plots/pt1pt2Zoom_7.png'>
+	<img width="600" border='0' src='./plots/pt1pt2Zoom_7.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/pt1pt2Zoom_8.png'>
+	<img width="600" border='0' src='./plots/pt1pt2Zoom_8.png'>
+      </a>
+    </td>
+    <td align="center">
       <a href='./plots/eff10_pt1pt2Zoom.png'>
 	<img width="600" border='0' src='./plots/eff10_pt1pt2Zoom.png'>
       </a>
@@ -348,6 +363,11 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_pt1pt2Zoom.png'>
 	<img width="600" border='0' src='./plots/eff65_pt1pt2Zoom.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_pt1pt2Zoom.png'>
+	<img width="600" border='0' src='./plots/eff87_pt1pt2Zoom.png'>
       </a>
     </td>
   </tr> 
@@ -388,6 +408,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       </a>
     </td>
     <td align="center">
+      <a href='./plots/eta1eta2_7.png'>
+	<img width="600" border='0' src='./plots/eta1eta2_7.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eta1eta2_8.png'>
+	<img width="600" border='0' src='./plots/eta1eta2_8.png'>
+      </a>
+    </td>
+    <td align="center">
       <a href='./plots/eff10_eta1eta2.png'>
 	<img width="600" border='0' src='./plots/eff10_eta1eta2.png'>
       </a>
@@ -405,6 +435,11 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_eta1eta2.png'>
 	<img width="600" border='0' src='./plots/eff65_eta1eta2.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_eta1eta2.png'>
+	<img width="600" border='0' src='./plots/eff87_eta1eta2.png'>
       </a>
     </td>
   </tr> 
@@ -445,6 +480,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       </a>
     </td>
     <td align="center">
+      <a href='./plots/phi1phi2_7.png'>
+	<img width="600" border='0' src='./plots/phi1phi2_7.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/phi1phi2_8.png'>
+	<img width="600" border='0' src='./plots/phi1phi2_8.png'>
+      </a>
+    </td>
+    <td align="center">
       <a href='./plots/eff10_phi1phi2.png'>
 	<img width="600" border='0' src='./plots/eff10_phi1phi2.png'>
       </a>
@@ -464,6 +509,11 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
 	<img width="600" border='0' src='./plots/eff65_phi1phi2.png'>
       </a>
     </td>
+    <td align="center">
+      <a href='./plots/eff87_phi1phi2.png'>
+	<img width="600" border='0' src='./plots/eff87_phi1phi2.png'>
+      </a>
+    </td>
   </tr> 
 </table>
 
@@ -478,25 +528,30 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
       <font size="8">eff [1]/[0]</font>
     </td>
     <td align="center">
-      <font size="8">cut[0] cut[1] cut[2]</font>
+      <font size="8">cut[0] cut[1] cut[2] A</font>
     </td>
     <td align="center">
-      <font size="8">eff [2]/[1] (no ptcuts)</font>
+      <font size="8">eff [2]/[1] A</font>
     </td>
     <td align="center">
-      <font size="8">cut[0] cut[3] cut[4]</font>
+      <font size="8">cut[0] cut[3] cut[4] B</font>
     </td>
     <td align="center">
-      <font size="8">eff [4]/[3] (Abs ptcuts)</font>
+      <font size="8">eff [4]/[3] B</font>
     </td>
     <td align="center">
-      <font size="8">cut[0] cut[5] cut[6]</font>
+      <font size="8">cut[0] cut[5] cut[6] C</font>
     </td>
     <td align="center">
-      <font size="8">eff [6]/[5] (Norm ptcuts)</font>
+      <font size="8">eff [6]/[5] C</font>
+    </td>
+    <td align="center">
+      <font size="8">cut[0] cut[7] cut[8] D</font>
+    </td>
+    <td align="center">
+      <font size="8">eff [8]/[7] D</font>
     </td>
   </tr> 
-
   <tr>
     <td align="center">
       <a href='./plots/10higgsEta.png'>
@@ -536,6 +591,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_higgsEta.png'>
 	<img width="600" border='0' src='./plots/eff65_higgsEta.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/87higgsEta.png'>
+	<img width="600" border='0' src='./plots/87higgsEta.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_higgsEta.png'>
+	<img width="600" border='0' src='./plots/eff87_higgsEta.png'>
       </a>
     </td>
   </tr>
@@ -580,6 +645,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
 	<img width="600" border='0' src='./plots/eff65_higgsPhi.png'>
       </a>
     </td>
+    <td align="center">
+      <a href='./plots/87higgsPhi.png'>
+	<img width="600" border='0' src='./plots/87higgsPhi.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_higgsPhi.png'>
+	<img width="600" border='0' src='./plots/eff87_higgsPhi.png'>
+      </a>
+    </td>
   </tr>
   <tr>
     <td align="center">
@@ -620,6 +695,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_massDiphoton.png'>
 	<img width="600" border='0' src='./plots/eff65_massDiphoton.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/87massDiphoton.png'>
+	<img width="600" border='0' src='./plots/87massDiphoton.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_massDiphoton.png'>
+	<img width="600" border='0' src='./plots/eff87_massDiphoton.png'>
       </a>
     </td>
   </tr>
@@ -664,6 +749,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
 	<img width="600" border='0' src='./plots/eff65_ptLead.png'>
       </a>
     </td>
+    <td align="center">
+      <a href='./plots/87ptLead.png'>
+	<img width="600" border='0' src='./plots/87ptLead.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_ptLead.png'>
+	<img width="600" border='0' src='./plots/eff87_ptLead.png'>
+      </a>
+    </td>
   </tr>
   <tr>
     <td align="center">
@@ -704,6 +799,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_ptTrail.png'>
 	<img width="600" border='0' src='./plots/eff65_ptTrail.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/87ptTrail.png'>
+	<img width="600" border='0' src='./plots/87ptTrail.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_ptTrail.png'>
+	<img width="600" border='0' src='./plots/eff87_ptTrail.png'>
       </a>
     </td>
   </tr>
@@ -748,6 +853,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
 	<img width="600" border='0' src='./plots/eff65_ptLeadNorm.png'>
       </a>
     </td>
+    <td align="center">
+      <a href='./plots/87ptLeadNorm.png'>
+	<img width="600" border='0' src='./plots/87ptLeadNorm.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_ptLeadNorm.png'>
+	<img width="600" border='0' src='./plots/eff87_ptLeadNorm.png'>
+      </a>
+    </td>
   </tr>
   <tr>
     <td align="center">
@@ -788,6 +903,16 @@ bit_194_HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_
     <td align="center">
       <a href='./plots/eff65_ptTrailNorm.png'>
 	<img width="600" border='0' src='./plots/eff65_ptTrailNorm.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/87ptTrailNorm.png'>
+	<img width="600" border='0' src='./plots/87ptTrailNorm.png'>
+      </a>
+    </td>
+    <td align="center">
+      <a href='./plots/eff87_ptTrailNorm.png'>
+	<img width="600" border='0' src='./plots/eff87_ptTrailNorm.png'>
       </a>
     </td>
   </tr>
